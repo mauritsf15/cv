@@ -226,11 +226,6 @@ hr {
         text-align: center;
         padding-left: 0;
     }
-
-    img {
-        width: 35vw;
-        user-select: none;
-    }
     
     .intro-text {
         flex: none;
@@ -247,7 +242,7 @@ hr {
     img {
         border-radius: 50%;
         border: 10px solid antiquewhite;
-        min-width: 50vh;
+        width: 50vh;
         transition-duration: 500ms;
     }
     
