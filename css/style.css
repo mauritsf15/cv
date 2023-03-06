@@ -242,4 +242,17 @@ hr {
     .lang {
         min-width: 70vw;
     }
+
+    img {
+        border-radius: 50%;
+        border: 10px solid antiquewhite;
+        min-width: 50vh;
+        transition-duration: 500ms;
+    }
+    
+    img:hover {
+        filter: none;
+        transform: scale(1.1);
+        cursor: pointer;
+    }
 }
