@@ -8,7 +8,7 @@ function rotateImg() {
     if (currentImg > 3) {
         currentImg = 0;
     }
-    profileImg.src = '/img/' + pictures[currentImg];
+    profileImg.src = 'img/' + pictures[currentImg];
 }
 
 profileImg.addEventListener('click', rotateImg);
