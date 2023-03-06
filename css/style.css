@@ -229,6 +229,7 @@ hr {
 
     img {
         width: 35vw;
+        user-select: none;
     }
     
     .intro-text {
