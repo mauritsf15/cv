@@ -1,0 +1,16 @@
+[
+    {
+        "id": 0,
+        "school": "Stedelijk Gymnasium Leiden",
+        "startYear": "2016",
+        "endYear": "2022",
+        "description": "uitgevallen in examenjaar"
+    },
+    {
+        "id": 1,
+        "school": "ROC Mondriaan",
+        "startYear": "2022",
+        "endYear": "heden",
+        "description": "in 2e leerjaar, 1 jaar overgeslagen"
+    }
+]

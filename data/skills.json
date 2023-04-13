@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "Doorzettingsvermogen",
+        "amount": 85
+    },
+    {
+        "id": 1,
+        "name": "Enthousiasme",
+        "amount": 75
+    },
+    {
+        "id": 2,
+        "name": "Sociaal",
+        "amount": 70
+    },
+    {
+        "id": 3,
+        "name": "Leergierig",
+        "amount": 80
+    },
+    {
+        "id": 4,
+        "name": "Motivatie",
+        "amount": 85
+    },
+    {
+        "id": 5,
+        "name": "Communicatief",
+        "amount": 80
+    },
+    {
+        "id": 6,
+        "name": "Nederlands",
+        "amount": 100
+    },
+    {
+        "id": 7,
+        "name": "Engels",
+        "amount": 90
+    }
+]

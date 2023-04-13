@@ -1,0 +1,31 @@
+[
+    {
+        "id": 0,
+        "company": "KlusWijs",
+        "startDate": "juli 2019",
+        "endDate": "aug. 2019",
+        "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker bij de KlusWijs in Wassenaar"
+    },
+    {
+        "id": 1,
+        "company": "Albert Heijn",
+        "startDate": "dec. 2020",
+        "endDate": "okt. 2021",
+        "description": "Vakkenvuller bij de Albert Heijn in Wassenaar."
+    },
+    {
+        "id": 2,
+        "company": "Pepperminds",
+        "startDate": "apr. 2022",
+        "endDate": "okt. 2022",
+        "description": "Verkocht maandelijkse donaties voor goede doelen zoals Rode Kruis, KWF Kankerbestrijding, UNHCR, Artsen zonder Grenzen en meer op straat en aan de deur.<br><br>Ook verkocht ik abbonnementen voor de staatsloterij op straat."
+    },
+    {
+        "id": 3,
+        "company": "Megawatt",
+        "startDate": "jan. 2023",
+        "endDate": "heden",
+        "description": "Promoot bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken."
+    }
+    
+]

@@ -1,261 +1,95 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    scroll-behavior: smooth;
-    scroll-padding: 100px;
+.header, .navbar {
+    height: 75px;
+    z-index: 3;
 }
-
-header {
-    padding: 10px 5px;
-    background-color: rgb(25,25,25);
-    position: fixed;
-    width: 100%;
-    box-shadow: -6px 10px 10px rgb(25,25,25);
-}
-
-header > h1 {
-    color: white;
-    width: 40vw;
-    display: inline-block;
-    padding-left: 20px;
-}
-
-header > nav > a {
-    text-decoration: underline;
-    color: antiquewhite;
-    transition-duration: 0.2s;
-    padding-left: 10px;
-}
-
-header > nav > a:hover {
-    color: rgb(255, 217, 167)
-}
-
-a {
-    text-decoration: underline;
-    color: rgb(135, 77, 1);
-    transition-duration: 0.2s;
-}
-
-a:hover {
-    color: rgb(203, 142, 62)
-}
-
-header > nav {
-    display: inline-block;
-    text-align: end;
-    width: 55vw;
-}
-
+    
 main {
-    padding-top: 76px;
+    margin: 25px 0px 0px 0px !important;
 }
 
-.wrapper {
-    padding: 0px 30px;
-}
-
-.wrapper > div {
-    padding: 20px 20px;
-}
-
-.academic {
+.carousel-wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-}
-
-img {
-    aspect-ratio: 1 / 1 !important;
-    border-radius: 50%;
-    border: 15px solid antiquewhite;
-    width: 50vh;
-    transition-duration: 500ms;
-}
-
-img:hover {
-    filter: brightness(75%);
-    cursor: pointer;
-}
-
-.intro-text {
-    flex: 1;
-    width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-h6 {
-    color: gray;
+.width-100 {
+    width: 100% !important;
 }
 
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.inline-block {
+    display: inline-block;
 }
 
-.card {
-    flex: 1;
-    outline: 1px solid slategray;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition-duration: 0.5s;
-    min-width: 200px;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
-}
-
-.card p {
-    padding-right: 10px;
-    line-height: 24px;
-}
-
-ul {
-    list-style-position: inside;
-}
-
-hr {
-    margin: 10px 0px;
-}
-
-.skill-items {
+.part {
     display: flex;
     flex-wrap: wrap;
 }
 
-.skill {
-    flex: 1;
-    min-width: 30vw;
-    background: rgb(255, 222, 179);
-    color: white;
-    border-radius: 10px;
-    margin: 5px;
+.carousel {
     transition-duration: 0.5s;
+    filter: saturate(80%);
 }
 
-.skill > div {
-    text-align: end;
-    padding: 10px;
-    border-radius: 10px;
+.carousel:hover {
+    filter: saturate(140%);
 }
 
-.pers {
-    width: 85%;
-    background-color: rgb(33, 89, 70);
+.experiences {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
 }
 
-.enth {
-    width: 90%;
-    background-color: rgb(73, 33, 89);
-}
-
-.soci {
-    width: 80%;
-    background-color: rgb(36, 33, 89);
-}
-
-.learn {
-    width: 90%;
-    background-color: rgb(37, 89, 33);
-}
-
-.moti {
-    width: 90%;
-    background-color: rgb(89, 40, 33);
-}
-
-.comm {
-    width: 85%;
-    background-color: rgb(78, 89, 33);
-}
-
-.lang {
+.experiences > .card {
     flex: 1;
-    background: rgb(255, 222, 179);
-    color: white;
-    border-radius: 10px;
-    margin: 5px;
-    min-width: 40vw;
-    transition-duration: 0.5s;
+    padding: 10px 20px;
+    min-width: 250px;
+    max-width: 500px;
 }
 
-.skill:hover {
-    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.5);
+.card > h6 {
+    margin: -5px 0px;
+    font-size: 12px;
 }
 
-.lang:hover {
-    box-shadow: 0 16px 16px 0 rgba(0,0,0,0.5);
+h3 {
+    padding: 4px 30px 4px 30px;
+    margin: 20px 0px !important;
 }
 
-.lang > div {
-    text-align: end;
-    padding: 10px;
-    border-radius: 10px;
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.nl {
-    width: 96%;
-    background-color: rgb(148, 70, 28);
-    padding-right: 40px;
+.skills > .progress {
+    flex: 1;
+    min-width: 300px;
+    height: 40px;
 }
 
-.en {
-    width: 90%;
-    background-color: rgb(120, 29, 29);
+.progress-bar {
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.personal {
-    margin-bottom: 30px;
+.personalia {
+    margin-bottom: 20px !important;
 }
 
-@media only screen and (max-width: 850px) {
-    header > nav {
-        /* display: none; */
+@media only screen and (max-width: 767px) {
+    .part {
         text-align: center;
-        width: 100vw;
     }
 
-    header {
-        z-index: 2;
+    .academics, .personalia {
+        width: 100%;
     }
 
-    header > h1 {
-        width: 99vw;
-        text-align: center;
-        padding-left: 0;
-    }
-    
-    .intro-text {
-        flex: none;
-    }
-
-    .skill {
-        min-width: 70vw;
-    }
-
-    .lang {
-        min-width: 70vw;
-    }
-
-    img {
-        border-radius: 50%;
-        border: 10px solid antiquewhite;
-        width: 50vmin;
-        transition-duration: 500ms;
-        margin-bottom: 25px;
-        user-select: none;
-    }
-    
-    img:hover {
-        filter: none;
-        transform: scale(1.1);
-        cursor: pointer;
-        z-index: 0;
+    h3 {
+        margin-left: 0px;
     }
 }
