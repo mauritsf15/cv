@@ -1,7 +1,11 @@
 .header, .navbar {
     height: 75px;
     z-index: 3;
-    padding: 0px !important;
+    padding: 0px;
+}
+
+.navbar {
+    padding-left: 12px;
 }
     
 main {
