@@ -24,8 +24,14 @@
         "id": 3,
         "company": "Megawatt",
         "startDate": "jan. 2023",
+        "endDate": "juni 2023",
+        "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken."
+    },
+    {
+        "id": 4,
+        "company": "Shuz",
+        "startDate": "apr. 2023",
         "endDate": "heden",
-        "description": "Promoot bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken."
+        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant."
     }
-    
 ]
