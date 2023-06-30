@@ -33,5 +33,12 @@
         "startDate": "apr. 2023",
         "endDate": "heden",
         "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant."
+    },
+    {
+        "id": 5,
+        "company": "Duinrell",
+        "startDate": "jul. 2023",
+        "endDate": "heden",
+        "description": "In de horeca op vakantie- en familiepark Duinrell bij verschillende locaties in het attractiepark."
     }
 ]
