@@ -31,14 +31,21 @@
         "id": 4,
         "company": "Shuz",
         "startDate": "apr. 2023",
-        "endDate": "heden",
-        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant."
+        "endDate": "aug. 2023",
+        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook voor de webshop pakketten klaargemaakt voor verzending."
     },
     {
         "id": 5,
         "company": "Vermaat",
         "startDate": "jul. 2023",
+        "endDate": "aug. 2023",
+        "description": "Bij een restaurant met de La Place-formule op attractiepark Duinrell gewerkt, bijvoorbeeld achter de kassa, sandwiches maken of een manusje-van-alles zijn rond het gehele restaurant."
+    },
+    {
+        "id": 6,
+        "company": "ROC Mondriaan (stage)",
+        "startDate": "aug. 2023",
         "endDate": "heden",
-        "description": "Bij een restaurant met de La Place-formule op attractiepark Duinrell gewerkt, bijvoorbeeld achter de kassa of sandwiches maken."
+        "description": "Via ROC Mondriaan een stage webapps maken voor de Europese organisatie AEHT en het Nederlandse bedrijf Innotecs."
     }
 ]
