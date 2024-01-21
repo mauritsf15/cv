@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -11,110 +11,91 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-    <header class="container-fluid header sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Maurits Fokkens</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#academic">Academische details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#personalia">Personalia</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <main class="container-fluid row width-100">
-        <div class="col-2 col-md-1"></div>
-        <div class="col-8 col-md-4">
-            <div id="carousel-wrapper" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner rounded-circle">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="img/one.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="img/two.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="img/three.jpg" alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="img/four.jpg" alt="Fourth slide">
+    <!-- Hero -->
+    <div id="cv" class="container-flex box">
+        <div class="hero flex-column-center">
+            <h1>Maurits Fokkens</h1>
+            <h5>curriculum vitae</h5>
+            <a href="#cv" class="button button-up">
+                explore
+            </a>
+        </div>
+    </div>
+
+    <!-- Mobile message -->
+    <div class="container mobile-msg pt-3">
+        <div class="alert alert-primary" role="alert">
+            Deze website werkt beter op desktop.
+        </div>
+    </div>
+
+    <!-- Mijn verhaal -->
+    <div class="container section-1 pt-3">
+        <div class="image-div">
+            <img class="img-fluid" src="img/download.png" alt="">
+        </div>
+        <span class="line"></span>
+        <div>
+            <h3>Mijn verhaal</h3>
+            <hr>
+            <p>
+                Een passie voor programmeren heeft altijd al in mij gezeten. Sinds mijn 11e ben ik bezig geweest met websites maken en rond mijn 14e met het programmeren zelf.<br>
+                Al snel vond ik het een hele fijne hobby, omdat ik alles kon maken wat ik wilde!
+                <br><br>
+                Ik ben erg gedreven met programmeren, als iets niet meteen lukt vind ik dit een leuke uitdaging en doe ik er alles aan om dat op te lossen.<br>
+                In combinatie met mijn continue zoektocht naar uitdaging levert dit mooie projecten op, zoals deze website.
+                <br><br>
+                Ben je geïnteresseerd? Dan kan je ook mijn <a class="text-accent text-decoration-none" href="https://mau.bio/">portfolio bekijken</a>!
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Academische Details -->
+    <div class="container section-2">
+        <div>
+            <h3>Academische details</h3>
+            <hr>
+            <ul class="academics timeline">
+                <!-- Filled from data files -->
+            </ul>
+        </div>
+        <span class="line"></span>
+        <div class="image-div">
+            <img class="img-fluid" src="img/download.png" alt="">
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Werkervaringen -->
+    <div class="container section-3">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-8 col-lg-6">
+                    <!-- Section Heading-->
+                    <div class="section_heading text-center">
+                        <h3>Werkervaringen</h3>
+                        <hr class="no-margin-hr"></hr>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carousel-wrapper"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carousel-wrapper"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="apland-timeline-area experiences">
+
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-2 col-md-1"></div>
-        <div class="col-12 col-md-6 part" id="academic">
-            <div class="width-100">
-                <h3 class="bg-dark text-light inline-block">Academische details</h3><br>
-            </div>
-            <div class="academics">
-                
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-12 col-md-10 part" id="experience">
-            <div class="width-100">
-                <h3 class="bg-dark text-light inline-block">Ervaringen</h3><br>
-            </div>
-            <div class="experiences">
-                
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
-        <div class="col-12 col-md-10 part" id="skills">
-            <div class="width-100">
-                <h3 class="bg-dark text-light inline-block">Skills</h3><br>
-            </div>
-            <div class="skills">
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-        <div class="col-md-1"></div>
-        <div class="col-12 col-md-10 part" id="personalia">
-            <div class="width-100">
-                <h3 class="bg-dark text-light inline-block">Personalia</h3><br>
-            </div>
-            <div class="personalia">
-                <p>
-                    Woonplaats: Wassenaar, Zuid-Holland
-                    <br>
-                    Telefoon: +31 6 156 242 95
-                    <br>
-                    Email: <a class="link link-primary" href="mailto:mauritsfokkens@gmail.com">mauritsfokkens@gmail.com</a>
-                </p>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </main>
+    </div>
+
     <script src="js/main.js"></script>
 </body>
 
