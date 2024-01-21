@@ -2,15 +2,17 @@
     {
         "id": 0,
         "school": "Stedelijk Gymnasium Leiden",
+        "study": "Gymnasium",
         "startYear": "2016",
         "endYear": "2022",
-        "description": "uitgevallen in examenjaar"
+        "description": "Uitgevallen in Examenjaar"
     },
     {
         "id": 1,
         "school": "ROC Mondriaan",
+        "study": "Software Development",
         "startYear": "2022",
-        "endYear": "heden",
-        "description": "in 3e jaar, jaar 1 en 2 versneld gedaan"
+        "endYear": "2024",
+        "description": "Software Development (versneld traject door goede prestaties)"
     }
 ]

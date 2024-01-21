@@ -4,48 +4,62 @@
         "company": "KlusWijs",
         "startDate": "juli 2019",
         "endDate": "aug. 2019",
-        "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker bij de KlusWijs in Wassenaar"
+        "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker.",
+        "year": 2019,
+        "icon": "hammer"
     },
     {
         "id": 1,
         "company": "Albert Heijn",
         "startDate": "dec. 2020",
         "endDate": "okt. 2021",
-        "description": "Vakkenvuller bij de Albert Heijn in Wassenaar."
+        "description": "Vakkenvuller en magazijnmedewerker.",
+        "year": 2021,
+        "icon": "shop"
     },
     {
         "id": 2,
         "company": "Pepperminds",
         "startDate": "apr. 2022",
         "endDate": "okt. 2022",
-        "description": "Verkocht maandelijkse donaties voor goede doelen zoals Rode Kruis, KWF Kankerbestrijding, UNHCR, Artsen zonder Grenzen en meer op straat en aan de deur.<br><br>Ook verkocht ik abbonnementen voor de staatsloterij op straat."
+        "description": "Voor verschillende goede doelen en commerciële organisaties abonnementen verkocht.",
+        "year": 2022,
+        "icon": "cash-coin"
     },
     {
         "id": 3,
         "company": "Megawatt",
         "startDate": "jan. 2023",
         "endDate": "juni 2023",
-        "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken."
+        "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken op straat of op evenementen.",
+        "year": 2023,
+        "icon": "star"
     },
     {
         "id": 4,
         "company": "Shuz",
         "startDate": "apr. 2023",
         "endDate": "aug. 2023",
-        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook voor de webshop pakketten klaargemaakt voor verzending."
+        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook webshop pakketten ingepakt en opgestuurd.",
+        "year": 2023,
+        "icon": "shop"
     },
     {
         "id": 5,
         "company": "Vermaat",
         "startDate": "jul. 2023",
         "endDate": "aug. 2023",
-        "description": "Bij een restaurant met de La Place-formule op attractiepark Duinrell gewerkt, bijvoorbeeld achter de kassa, sandwiches maken of een manusje-van-alles zijn rond het gehele restaurant."
+        "description": "Bij een La Place restaurant in Duinrell gewerkt onder andere achter de kassa gestaan, eten bereiden en schoonmaken.",
+        "year": 2023,
+        "icon": "egg-fried"
     },
     {
         "id": 6,
         "company": "ROC Mondriaan (stage)",
         "startDate": "aug. 2023",
         "endDate": "heden",
-        "description": "Via ROC Mondriaan een stage webapps maken voor de Europese organisatie AEHT en het Nederlandse bedrijf Innotecs."
+        "description": "Voor International Offices van ROC Mondriaan een aantal webapps maken en een native app voor Android en iOS. ",
+        "year": 2024,
+        "icon": "terminal"
     }
 ]
