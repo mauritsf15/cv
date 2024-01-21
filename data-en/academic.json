@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "school": "Stedelijk Gymnasium Leiden",
+        "study": "Gymnasium",
+        "startYear": "2016",
+        "endYear": "2022",
+        "description": "Dropped out in final year"
+    },
+    {
+        "id": 1,
+        "school": "ROC Mondriaan",
+        "study": "Software Development",
+        "startYear": "2022",
+        "endYear": "2024",
+        "description": "Software Development (accelerated due to good performance)"
+    }
+]

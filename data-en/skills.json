@@ -1,0 +1,42 @@
+[
+    {
+        "id": 0,
+        "name": "Perseverance",
+        "amount": 85
+    },
+    {
+        "id": 1,
+        "name": "Enthusiasm",
+        "amount": 75
+    },
+    {
+        "id": 2,
+        "name": "Social",
+        "amount": 85
+    },
+    {
+        "id": 3,
+        "name": "Eager to learn",
+        "amount": 80
+    },
+    {
+        "id": 4,
+        "name": "Motivation",
+        "amount": 85
+    },
+    {
+        "id": 5,
+        "name": "Communicative",
+        "amount": 80
+    },
+    {
+        "id": 6,
+        "name": "Dutch",
+        "amount": 100
+    },
+    {
+        "id": 7,
+        "name": "English",
+        "amount": 95
+    }
+]
