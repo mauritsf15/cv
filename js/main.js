@@ -1,8 +1,3 @@
-// Enable tooltips
-
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
 // Easier query selector
 
 function qs(arg) {
@@ -104,8 +99,9 @@ function skills(jsonData) {
         j++;
         skill.innerHTML += 
         `
+        <span>${jsonData[i].name}</span>
         <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: ${jsonData[i].amount}%; background-color: rgb(${randHex()}) !important" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">${jsonData[i].name}</div>
+            <div class="progress-bar" role="progressbar" style="width: ${jsonData[i].amount}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         `;
     }
