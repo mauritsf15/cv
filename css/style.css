@@ -242,6 +242,7 @@ body:has(#cv:target) {
 
 .technologies {
     display: flex;
+    flex-wrap: wrap !important;
     justify-content: center;
     gap: 10px;
 
