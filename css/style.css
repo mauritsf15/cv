@@ -326,3 +326,24 @@ body:has(#cv:target) {
     }
 }
 
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    > .switch-language {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: 1px solid var(--text);
+        cursor: pointer;
+        z-index: 5;
+        color: var(--text);
+
+        > i {
+            font-size: 24px;
+        }
+    }
+}
