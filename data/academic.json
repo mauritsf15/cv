@@ -14,5 +14,13 @@
         "startYear": "2022",
         "endYear": "2024",
         "description": "Software Development (versneld)"
+    },
+    {
+        "id": 2,
+        "school": "Hogeschool van Amsterdam",
+        "study": "HBO-ICT",
+        "startYear": "2024",
+        "endYear": "HEDEN",
+        "description": "HBO-ICT: Software Engineering"
     }
 ]
