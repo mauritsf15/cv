@@ -2,7 +2,7 @@
     {
         "id": 0,
         "school": "Stedelijk Gymnasium Leiden",
-        "study": "Gymnasium",
+        "study": "VWO",
         "startYear": "2016",
         "endYear": "2022",
         "description": "Dropped out in final year"
@@ -14,5 +14,13 @@
         "startYear": "2022",
         "endYear": "2024",
         "description": "Software Development (accelerated)"
+    },
+    {
+        "id": 2,
+        "school": "Hogeschool van Amsterdam",
+        "study": "HBO-ICT",
+        "startYear": "2024",
+        "endYear": "CURRENT",
+        "description": "HBO-ICT: Software Engineering"
     }
 ]
