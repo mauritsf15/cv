@@ -61,5 +61,14 @@
         "description": "Via International Office van ROC Mondriaan voor twee internationale organisaties een webapp gemaakt, daarnaast ook een native iOS en Android app.",
         "year": 2024,
         "icon": "terminal"
+    },
+    {
+        "id": 7,
+        "company": "KPN",
+        "startDate": "okt. 2024",
+        "endDate": "heden",
+        "description": "Sterke klantenservice aanbieden voor klanten van KPN op het kantoor in Amsterdam.",
+        "year": 2024,
+        "icon": "telephone"
     }
 ]

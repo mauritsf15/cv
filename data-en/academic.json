@@ -17,10 +17,10 @@
     },
     {
         "id": 2,
-        "school": "Hogeschool van Amsterdam",
+        "school": "Amsterdam University of Applied Sciences",
         "study": "HBO-ICT",
         "startYear": "2024",
         "endYear": "CURRENT",
-        "description": "HBO-ICT: Software Engineering"
+        "description": "BaSC - HBO-ICT: Software Engineering"
     }
 ]

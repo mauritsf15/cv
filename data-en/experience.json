@@ -61,5 +61,14 @@
         "description": "Developed two webapps and one native iOS/Android app for international organizations through the International Office of ROC Mondriaan.",
         "year": 2024,
         "icon": "terminal"
+    },
+    {
+        "id": 7,
+        "company": "KPN",
+        "startDate": "okt. 2024",
+        "endDate": "now",
+        "description": "Offering great customer service to clients of telecommunications company KPN.",
+        "year": 2024,
+        "icon": "telephone"
     }
 ]
