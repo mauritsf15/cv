@@ -65,10 +65,10 @@
     {
         "id": 7,
         "company": "KPN",
-        "startDate": "okt. 2024",
+        "startDate": "oct. 2024",
         "endDate": "now",
-        "description": "Offering great customer service to clients of telecommunications company KPN.",
-        "year": 2024,
+        "description": "Offering great customer service to clients of telecommunications company KPN. Helped customers with technical and administrative problems.",
+        "year": 2025,
         "icon": "telephone"
     }
 ]
