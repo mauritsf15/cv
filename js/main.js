@@ -98,7 +98,8 @@ function updateExperience(experienceData) {
     const container = document.querySelector('.experience-list');
     container.innerHTML = '';
     
-    experienceData.forEach(exp => {
+    // Reverse the array to show latest first
+    [...experienceData].reverse().forEach(exp => {
         const item = document.createElement('div');
         item.className = 'experience-item';
         item.innerHTML = `
@@ -117,7 +118,8 @@ function updateEducation(academicData) {
     const container = document.querySelector('.education-list');
     container.innerHTML = '';
     
-    academicData.forEach(edu => {
+    // Reverse the array to show latest first
+    [...academicData].reverse().forEach(edu => {
         const item = document.createElement('div');
         item.className = 'education-item';
         item.innerHTML = `
