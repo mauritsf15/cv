@@ -1,154 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal CV - John Doe</title>
+    <title>Maurits Fokkens - CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Main Navigation -->
-    <nav id="main-nav" class="nav-container active">
-        <div class="nav-content">
-            <h1 class="name-title">John Doe</h1>
-            <p class="subtitle">Full Stack Developer</p>
-            <div class="nav-menu">
-                <button class="nav-item" data-section="experience">
-                    <span class="nav-icon">💼</span>
-                    <span class="nav-text">Experience</span>
-                </button>
-                <button class="nav-item" data-section="education">
-                    <span class="nav-icon">🎓</span>
-                    <span class="nav-text">Education</span>
-                </button>
-                <button class="nav-item" data-section="skills">
-                    <span class="nav-icon">⚡</span>
-                    <span class="nav-text">Skills</span>
-                </button>
-                <button class="nav-item" data-section="projects">
-                    <span class="nav-icon">🚀</span>
-                    <span class="nav-text">Projects</span>
-                </button>
-                <button class="nav-item" data-section="about">
-                    <span class="nav-icon">👤</span>
-                    <span class="nav-text">About Me</span>
-                </button>
-            </div>
-        </div>
-    </nav>
+    <!-- Background Animated Shapes -->
+    <div class="animated-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
 
-    <!-- Experience Section -->
-    <section id="experience" class="content-section">
-        <button class="close-btn">×</button>
-        <div class="section-content">
-            <h2 class="section-title">Professional Experience</h2>
-            <div id="experience-timeline" class="timeline">
-                <!-- Content will be loaded dynamically -->
-            </div>
-        </div>
-    </section>
+    <!-- Fixed Controls -->
+    <div class="fixed-controls">
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+        </button>
+        <button class="language-toggle">
+            <span class="lang-nl">NL</span>
+            <span class="separator">/</span>
+            <span class="lang-en">EN</span>
+        </button>
+    </div>
 
-    <!-- Education Section -->
-    <section id="education" class="content-section">
-        <button class="close-btn">×</button>
-        <div class="section-content">
-            <h2 class="section-title">Education</h2>
-            <div id="education-timeline" class="timeline">
-                <!-- Content will be loaded dynamically -->
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Home/Menu Section -->
+        <section id="home" class="section active">
+            <div class="content">
+                <h1 class="name" data-key="name"></h1>
+                <p class="job-title" data-key="job_title"></p>
+                
+                <nav class="main-nav">
+                    <button class="nav-button" data-section="experience" data-key="nav_experience"></button>
+                    <button class="nav-button" data-section="education" data-key="nav_education"></button>
+                    <button class="nav-button" data-section="skills" data-key="nav_skills"></button>
+                    <button class="nav-button" data-section="projects" data-key="nav_projects"></button>
+                    <button class="nav-button" data-section="about" data-key="nav_about"></button>
+                </nav>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="content-section">
-        <button class="close-btn">×</button>
-        <div class="section-content">
-            <h2 class="section-title">Technical Skills</h2>
-            <div id="skills-container" class="skills-grid">
-                <!-- Content will be loaded dynamically -->
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="content">
+                <div class="content-header">
+                    <button class="back-button">← Back</button>
+                    <h2 data-key="nav_experience"></h2>
+                </div>
+                <div class="content-body">
+                    <div class="experience-list"></div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="content-section">
-        <button class="close-btn">×</button>
-        <div class="section-content">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>E-Commerce Platform</h3>
-                    <p>A full-stack e-commerce solution built with React and Node.js, featuring real-time inventory management and secure payment processing.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="content">
+                <div class="content-header">
+                    <button class="back-button">← Back</button>
+                    <h2 data-key="nav_education"></h2>
                 </div>
-                <div class="project-card">
-                    <h3>Task Management App</h3>
-                    <p>A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Weather Dashboard</h3>
-                    <p>A responsive weather dashboard that provides detailed forecasts, interactive maps, and historical weather data visualization.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Portfolio Generator</h3>
-                    <p>A CLI tool that generates beautiful portfolio websites from JSON data, with multiple themes and customization options.</p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">View Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
-                    </div>
+                <div class="content-body">
+                    <div class="education-list"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="content-section">
-        <button class="close-btn">×</button>
-        <div class="section-content">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-container">
-                <div class="profile-image-container">
-                    <div class="profile-image-placeholder">
-                        <span>👤</span>
-                    </div>
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="content">
+                <div class="content-header">
+                    <button class="back-button">← Back</button>
+                    <h2 data-key="nav_skills"></h2>
                 </div>
-                <div class="about-text">
-                    <p>
-                        Hello! I'm John Doe, a passionate Full Stack Developer with over 5 years of experience building web applications. 
-                        I specialize in creating elegant, user-friendly solutions that solve real-world problems.
-                    </p>
-                    <p>
-                        My journey in tech started with a curiosity about how things work on the web, and has evolved into a career 
-                        focused on crafting exceptional digital experiences. I believe in writing clean, maintainable code and staying 
-                        up-to-date with the latest industry trends and best practices.
-                    </p>
-                    <p>
-                        When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or 
-                        sharing my knowledge through technical blog posts and community meetups.
-                    </p>
-                    <div class="contact-info">
-                        <a href="mailto:john.doe@example.com" class="contact-link">📧 john.doe@example.com</a>
-                        <a href="https://linkedin.com/in/johndoe" class="contact-link">💼 LinkedIn</a>
-                        <a href="https://github.com/johndoe" class="contact-link">🔗 GitHub</a>
+                <div class="content-body">
+                    <div class="skills-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="content">
+                <div class="content-header">
+                    <button class="back-button">← Back</button>
+                    <h2 data-key="projects_title"></h2>
+                </div>
+                <div class="content-body">
+                    <div class="projects-content">
+                        <p>Projects content will be loaded here...</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="content">
+                <div class="content-header">
+                    <button class="back-button">← Back</button>
+                    <h2 data-key="about_title"></h2>
+                </div>
+                <div class="content-body">
+                    <div class="about-text" data-key="about_text"></div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <script src="js/main.js"></script>
 </body>

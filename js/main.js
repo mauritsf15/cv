@@ -1,290 +1,356 @@
-// Navigation and Section Management
-const mainNav = document.getElementById('main-nav');
-const navItems = document.querySelectorAll('.nav-item');
-const sections = document.querySelectorAll('.content-section');
-const closeBtns = document.querySelectorAll('.close-btn');
-
-// Navigation Click Handlers
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const targetSection = item.getAttribute('data-section');
-        showSection(targetSection);
-    });
-});
-
-// Close Button Click Handlers
-closeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        hideAllSections();
-        showMainNav();
-    });
-});
-
-// Show specific section
-function showSection(sectionId) {
-    hideMainNav();
-    setTimeout(() => {
-        const section = document.getElementById(sectionId);
-        section.classList.add('active');
-        
-        // Load content for dynamic sections
-        if (sectionId === 'experience') {
-            loadExperience();
-        } else if (sectionId === 'education') {
-            loadEducation();
-        } else if (sectionId === 'skills') {
-            loadSkills();
-        }
-    }, 300);
-}
-
-// Hide all sections
-function hideAllSections() {
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-}
-
-// Show main navigation
-function showMainNav() {
-    setTimeout(() => {
-        mainNav.classList.add('active');
-    }, 300);
-}
-
-// Hide main navigation
-function hideMainNav() {
-    mainNav.classList.remove('active');
-}
-
-// Load Experience Data
-async function loadExperience() {
-    try {
-        const response = await fetch('data/experience.json');
-        const data = await response.json();
-        
-        const timeline = document.getElementById('experience-timeline');
-        timeline.innerHTML = '';
-        
-        // Group by year
-        const groupedData = data.reduce((acc, item) => {
-            if (!acc[item.year]) {
-                acc[item.year] = [];
-            }
-            acc[item.year].push(item);
-            return acc;
-        }, {});
-        
-        // Sort years in descending order
-        const years = Object.keys(groupedData).sort((a, b) => b - a);
-        
-        years.forEach(year => {
-            // Add year header
-            const yearHeader = document.createElement('div');
-            yearHeader.className = 'timeline-year';
-            yearHeader.textContent = year;
-            timeline.appendChild(yearHeader);
-            
-            // Add items for this year
-            groupedData[year].forEach(item => {
-                const timelineItem = createTimelineItem(
-                    item.company,
-                    `${item.startDate} - ${item.endDate}`,
-                    item.description
-                );
-                timeline.appendChild(timelineItem);
-            });
-        });
-    } catch (error) {
-        console.error('Error loading experience:', error);
-        // Fallback content
-        document.getElementById('experience-timeline').innerHTML = `
-            <div class="timeline-year">2023</div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Senior Full Stack Developer</h3>
-                    <p class="date">Jan 2023 - Present</p>
-                    <p>Leading development of cloud-based solutions and mentoring junior developers.</p>
-                </div>
-            </div>
-            <div class="timeline-year">2022</div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Full Stack Developer</h3>
-                    <p class="date">Mar 2022 - Dec 2022</p>
-                    <p>Developed and maintained multiple web applications using modern JavaScript frameworks.</p>
-                </div>
-            </div>
-        `;
+// State Management
+const state = {
+    currentLanguage: localStorage.getItem('language') || 'nl',
+    currentTheme: localStorage.getItem('theme') || 'light',
+    currentSection: 'home',
+    data: {
+        nl: {},
+        en: {}
     }
-}
+};
 
-// Load Education Data
-async function loadEducation() {
-    try {
-        const response = await fetch('data/academic.json');
-        const data = await response.json();
-        
-        const timeline = document.getElementById('education-timeline');
-        timeline.innerHTML = '';
-        
-        data.forEach(item => {
-            const timelineItem = createTimelineItem(
-                item.school,
-                `${item.startYear} - ${item.endYear}`,
-                item.study + (item.description ? '. ' + item.description : '')
-            );
-            timeline.appendChild(timelineItem);
-        });
-    } catch (error) {
-        console.error('Error loading education:', error);
-        // Fallback content
-        document.getElementById('education-timeline').innerHTML = `
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>University of Technology</h3>
-                    <p class="date">2018 - 2022</p>
-                    <p>B.Sc. Computer Science - Graduated with honors</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Tech Academy</h3>
-                    <p class="date">2017 - 2018</p>
-                    <p>Full Stack Web Development Bootcamp</p>
-                </div>
-            </div>
-        `;
-    }
-}
-
-// Load Skills Data
-async function loadSkills() {
-    try {
-        const response = await fetch('data/skills.json');
-        const data = await response.json();
-        
-        const container = document.getElementById('skills-container');
-        container.innerHTML = '';
-        
-        data.forEach(skill => {
-            const skillItem = createSkillItem(skill.name, skill.amount);
-            container.appendChild(skillItem);
-        });
-        
-        // Animate skill bars after a short delay
-        setTimeout(() => {
-            const progressBars = container.querySelectorAll('.skill-progress');
-            progressBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    bar.style.width = bar.getAttribute('data-percentage') + '%';
-                }, index * 100);
-            });
-        }, 100);
-    } catch (error) {
-        console.error('Error loading skills:', error);
-        // Fallback content
-        const fallbackSkills = [
-            { name: 'JavaScript', amount: 90 },
-            { name: 'React', amount: 85 },
-            { name: 'Node.js', amount: 80 },
-            { name: 'CSS/SASS', amount: 85 },
-            { name: 'Python', amount: 75 },
-            { name: 'MongoDB', amount: 70 }
-        ];
-        
-        const container = document.getElementById('skills-container');
-        container.innerHTML = '';
-        
-        fallbackSkills.forEach(skill => {
-            const skillItem = createSkillItem(skill.name, skill.amount);
-            container.appendChild(skillItem);
-        });
-        
-        // Animate skill bars
-        setTimeout(() => {
-            const progressBars = container.querySelectorAll('.skill-progress');
-            progressBars.forEach((bar, index) => {
-                setTimeout(() => {
-                    bar.style.width = bar.getAttribute('data-percentage') + '%';
-                }, index * 100);
-            });
-        }, 100);
-    }
-}
-
-// Helper function to create timeline items
-function createTimelineItem(title, date, description) {
-    const item = document.createElement('div');
-    item.className = 'timeline-item';
-    
-    item.innerHTML = `
-        <div class="timeline-content">
-            <h3>${title}</h3>
-            <p class="date">${date}</p>
-            <p>${description}</p>
-        </div>
-    `;
-    
-    return item;
-}
-
-// Helper function to create skill items
-function createSkillItem(name, percentage) {
-    const item = document.createElement('div');
-    item.className = 'skill-item';
-    
-    item.innerHTML = `
-        <div class="skill-header">
-            <span class="skill-name">${name}</span>
-            <span class="skill-percentage">${percentage}%</span>
-        </div>
-        <div class="skill-bar">
-            <div class="skill-progress" data-percentage="${percentage}"></div>
-        </div>
-    `;
-    
-    return item;
-}
-
-// Initialize - Show main nav on load
+// Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
-    showMainNav();
+    initializeApp();
 });
 
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        const activeSection = document.querySelector('.content-section.active');
-        if (activeSection) {
-            hideAllSections();
-            showMainNav();
-        }
+async function initializeApp() {
+    // Apply saved theme
+    if (state.currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
     }
-});
-
-// Touch gesture support for mobile
-let touchStartX = 0;
-let touchEndX = 0;
-
-document.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-document.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipeGesture();
-});
-
-function handleSwipeGesture() {
-    const swipeThreshold = 50;
-    const activeSection = document.querySelector('.content-section.active');
     
-    if (touchEndX < touchStartX - swipeThreshold && mainNav.classList.contains('active')) {
-        // Swipe left on main nav - could open first section
-    } else if (touchEndX > touchStartX + swipeThreshold && activeSection) {
-        // Swipe right on any section - go back to main nav
-        hideAllSections();
-        showMainNav();
+    // Apply saved language to toggle
+    const langToggle = document.querySelector('.language-toggle');
+    if (state.currentLanguage === 'en') {
+        langToggle.classList.add('en');
     }
+    
+    // Load initial content
+    await loadContent(state.currentLanguage);
+    
+    // Set up event listeners
+    setupEventListeners();
+    
+    // Initialize skill bars after a short delay
+    setTimeout(() => {
+        animateSkillBars();
+    }, 500);
+}
+
+// Main content loading function
+async function loadContent(language) {
+    const basePath = language === 'en' ? 'data-en' : 'data';
+    
+    try {
+        // Show loading state
+        document.body.classList.add('loading');
+        
+        // Fetch all JSON files
+        const [uiText, experience, academic, skills] = await Promise.all([
+            fetch(`${basePath}/ui-text.json`).then(r => r.json()),
+            fetch(`${basePath}/experience.json`).then(r => r.json()),
+            fetch(`${basePath}/academic.json`).then(r => r.json()),
+            fetch(`${basePath}/skills.json`).then(r => r.json())
+        ]);
+        
+        // Store data
+        state.data[language] = {
+            uiText,
+            experience,
+            academic,
+            skills
+        };
+        
+        // Update UI text
+        updateUIText(uiText);
+        
+        // Update dynamic content
+        updateExperience(experience);
+        updateEducation(academic);
+        updateSkills(skills);
+        
+        // Update current language
+        state.currentLanguage = language;
+        localStorage.setItem('language', language);
+        
+    } catch (error) {
+        console.error('Error loading content:', error);
+        // Fallback: create sample data if files not found
+        createSampleData(language);
+    } finally {
+        document.body.classList.remove('loading');
+    }
+}
+
+// Update UI text based on data-key attributes
+function updateUIText(uiText) {
+    document.querySelectorAll('[data-key]').forEach(element => {
+        const key = element.getAttribute('data-key');
+        if (uiText[key]) {
+            element.textContent = uiText[key];
+        }
+    });
+}
+
+// Update experience section
+function updateExperience(experienceData) {
+    const container = document.querySelector('.experience-list');
+    container.innerHTML = '';
+    
+    experienceData.forEach(exp => {
+        const item = document.createElement('div');
+        item.className = 'experience-item';
+        item.innerHTML = `
+            <div class="experience-header">
+                <h3 class="experience-company">${exp.company}</h3>
+                <span class="experience-dates">${exp.startDate} - ${exp.endDate}</span>
+            </div>
+            <p class="experience-description">${exp.description}</p>
+        `;
+        container.appendChild(item);
+    });
+}
+
+// Update education section
+function updateEducation(academicData) {
+    const container = document.querySelector('.education-list');
+    container.innerHTML = '';
+    
+    academicData.forEach(edu => {
+        const item = document.createElement('div');
+        item.className = 'education-item';
+        item.innerHTML = `
+            <div class="education-header">
+                <div>
+                    <h3 class="education-school">${edu.school}</h3>
+                    <p class="education-study">${edu.study}</p>
+                </div>
+                <span class="education-years">${edu.startYear} - ${edu.endYear}</span>
+            </div>
+            <p class="education-description">${edu.description}</p>
+        `;
+        container.appendChild(item);
+    });
+}
+
+// Update skills section
+function updateSkills(skillsData) {
+    const container = document.querySelector('.skills-list');
+    container.innerHTML = '';
+    
+    skillsData.forEach(skill => {
+        const item = document.createElement('div');
+        item.className = 'skill-item';
+        item.innerHTML = `
+            <div class="skill-header">
+                <span class="skill-name">${skill.name}</span>
+                <span class="skill-percentage">${skill.amount}%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-percentage="${skill.amount}"></div>
+            </div>
+        `;
+        container.appendChild(item);
+    });
+    
+    // Re-animate skill bars if on skills page
+    if (state.currentSection === 'skills') {
+        setTimeout(animateSkillBars, 100);
+    }
+}
+
+// Animate skill bars
+function animateSkillBars() {
+    document.querySelectorAll('.skill-progress').forEach(bar => {
+        const percentage = bar.getAttribute('data-percentage');
+        bar.style.width = '0%';
+        setTimeout(() => {
+            bar.style.width = percentage + '%';
+        }, 100);
+    });
+}
+
+// Set up all event listeners
+function setupEventListeners() {
+    // Theme toggle
+    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+    
+    // Language toggle
+    document.querySelector('.language-toggle').addEventListener('click', toggleLanguage);
+    
+    // Navigation buttons
+    document.querySelectorAll('.nav-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const targetSection = e.target.getAttribute('data-section');
+            navigateToSection(targetSection);
+        });
+    });
+    
+    // Back buttons
+    document.querySelectorAll('.back-button').forEach(button => {
+        button.addEventListener('click', () => {
+            navigateToSection('home');
+        });
+    });
+}
+
+// Theme toggle function
+function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    state.currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+    localStorage.setItem('theme', state.currentTheme);
+}
+
+// Language toggle function
+async function toggleLanguage() {
+    const langToggle = document.querySelector('.language-toggle');
+    const newLanguage = state.currentLanguage === 'nl' ? 'en' : 'nl';
+    
+    langToggle.classList.toggle('en');
+    await loadContent(newLanguage);
+}
+
+// Navigation function
+function navigateToSection(sectionId) {
+    const currentSection = document.querySelector('.section.active');
+    const targetSection = document.getElementById(sectionId);
+    
+    if (!targetSection || currentSection.id === sectionId) return;
+    
+    // Add transitioning class to body for shape animations
+    document.body.classList.add('section-transitioning');
+    
+    // Slide out current section
+    currentSection.classList.add('slide-out-left');
+    currentSection.classList.remove('active');
+    
+    // Slide in target section
+    setTimeout(() => {
+        currentSection.classList.remove('slide-out-left');
+        targetSection.classList.add('active');
+        state.currentSection = sectionId;
+        
+        // Animate skill bars if navigating to skills
+        if (sectionId === 'skills') {
+            setTimeout(animateSkillBars, 300);
+        }
+        
+        // Remove transitioning class
+        setTimeout(() => {
+            document.body.classList.remove('section-transitioning');
+        }, 500);
+    }, 300);
+}
+
+// Create sample data if JSON files are not available
+function createSampleData(language) {
+    const sampleData = {
+        nl: {
+            uiText: {
+                name: "Maurits Fokkens",
+                job_title: "Software Ontwikkelaar",
+                nav_experience: "Ervaring",
+                nav_education: "Opleiding",
+                nav_skills: "Vaardigheden",
+                nav_projects: "Projecten",
+                nav_about: "Over Mij",
+                about_title: "Over Mij",
+                about_text: "Hallo! Ik ben een gepassioneerde software ontwikkelaar.\nIk hou van het creëren van mooie en functionele web applicaties.",
+                projects_title: "Mijn Projecten"
+            },
+            experience: [
+                {
+                    id: 1,
+                    company: "Tech Bedrijf NL",
+                    startDate: "Jan 2020",
+                    endDate: "Heden",
+                    description: "Full-stack ontwikkeling van web applicaties met moderne technologieën.",
+                    year: 2020
+                },
+                {
+                    id: 2,
+                    company: "Startup XYZ",
+                    startDate: "Jun 2018",
+                    endDate: "Dec 2019",
+                    description: "Frontend ontwikkeling en UI/UX design voor diverse projecten.",
+                    year: 2018
+                }
+            ],
+            academic: [
+                {
+                    id: 1,
+                    school: "Technische Universiteit",
+                    study: "Computer Science",
+                    startYear: "2014",
+                    endYear: "2018",
+                    description: "Bachelor in Computer Science met focus op web technologieën."
+                }
+            ],
+            skills: [
+                { id: 1, name: "JavaScript", amount: 90 },
+                { id: 2, name: "HTML/CSS", amount: 95 },
+                { id: 3, name: "React", amount: 85 },
+                { id: 4, name: "Node.js", amount: 80 },
+                { id: 5, name: "Python", amount: 75 }
+            ]
+        },
+        en: {
+            uiText: {
+                name: "Maurits Fokkens",
+                job_title: "Software Developer",
+                nav_experience: "Experience",
+                nav_education: "Education",
+                nav_skills: "Skills",
+                nav_projects: "Projects",
+                nav_about: "About Me",
+                about_title: "About Me",
+                about_text: "Hello! I'm a passionate software developer.\nI love creating beautiful and functional web applications.",
+                projects_title: "My Projects"
+            },
+            experience: [
+                {
+                    id: 1,
+                    company: "Tech Company NL",
+                    startDate: "Jan 2020",
+                    endDate: "Present",
+                    description: "Full-stack development of web applications using modern technologies.",
+                    year: 2020
+                },
+                {
+                    id: 2,
+                    company: "Startup XYZ",
+                    startDate: "Jun 2018",
+                    endDate: "Dec 2019",
+                    description: "Frontend development and UI/UX design for various projects.",
+                    year: 2018
+                }
+            ],
+            academic: [
+                {
+                    id: 1,
+                    school: "Technical University",
+                    study: "Computer Science",
+                    startYear: "2014",
+                    endYear: "2018",
+                    description: "Bachelor in Computer Science with focus on web technologies."
+                }
+            ],
+            skills: [
+                { id: 1, name: "JavaScript", amount: 90 },
+                { id: 2, name: "HTML/CSS", amount: 95 },
+                { id: 3, name: "React", amount: 85 },
+                { id: 4, name: "Node.js", amount: 80 },
+                { id: 5, name: "Python", amount: 75 }
+            ]
+        }
+    };
+    
+    const data = sampleData[language];
+    state.data[language] = data;
+    
+    updateUIText(data.uiText);
+    updateExperience(data.experience);
+    updateEducation(data.academic);
+    updateSkills(data.skills);
 }
