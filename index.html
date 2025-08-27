@@ -3,118 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maurits Fokkens - CV</title>
+    <title>Personal CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Background Animated Shapes -->
-    <div class="animated-shapes">
+
+    <!-- Animated Background Shapes -->
+    <div class="shape-container">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
         <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
     </div>
 
-    <!-- Fixed Controls -->
-    <div class="fixed-controls">
-        <button class="theme-toggle" aria-label="Toggle theme">
-            <span class="sun-icon">☀️</span>
-            <span class="moon-icon">🌙</span>
+    <!-- UI Toggles -->
+    <div class="ui-toggles">
+        <button id="theme-toggle" title="Toggle Theme">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
         </button>
-        <button class="language-toggle">
-            <span class="lang-nl">NL</span>
-            <span class="separator">/</span>
-            <span class="lang-en">EN</span>
-        </button>
+        <button id="language-toggle" title="Toggle Language">NL / EN</button>
     </div>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Home/Menu Section -->
-        <section id="home" class="section active">
-            <div class="content">
-                <h1 class="name" data-key="name"></h1>
-                <p class="job-title" data-key="job_title"></p>
-                
-                <nav class="main-nav">
-                    <button class="nav-button" data-section="experience" data-key="nav_experience"></button>
-                    <button class="nav-button" data-section="education" data-key="nav_education"></button>
-                    <button class="nav-button" data-section="skills" data-key="nav_skills"></button>
-                    <button class="nav-button" data-section="projects" data-key="nav_projects"></button>
-                    <button class="nav-button" data-section="about" data-key="nav_about"></button>
-                </nav>
-            </div>
+    <!-- Main App Container -->
+    <div id="app-container">
+
+        <!-- Initial View / Main Navigation -->
+        <div id="main-view" class="view">
+            <header>
+                <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic">
+                <h1 data-key="name"></h1>
+                <p data-key="job_title"></p>
+            </header>
+            <nav id="main-nav">
+                <button class="nav-button" data-target="experience-section" data-key="nav_experience"></button>
+                <button class="nav-button" data-target="education-section" data-key="nav_education"></button>
+                <button class="nav-button" data-target="skills-section" data-key="nav_skills"></button>
+                <button class="nav-button" data-target="projects-section" data-key="nav_projects"></button>
+                <button class="nav-button" data-target="about-section" data-key="nav_about"></button>
+            </nav>
+        </div>
+
+        <!-- Content Sections (now direct children of app-container) -->
+        <section id="experience-section" class="content-section">
+            <button class="back-button">&larr; <span data-key="back_to_menu"></span></button>
+            <h2 data-key="nav_experience"></h2>
+            <div id="experience-list" class="content-list"></div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_experience"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="experience-list"></div>
-                </div>
-            </div>
+        <section id="education-section" class="content-section">
+            <button class="back-button">&larr; <span data-key="back_to_menu"></span></button>
+            <h2 data-key="nav_education"></h2>
+            <div id="education-list" class="content-list"></div>
         </section>
 
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_education"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="education-list"></div>
-                </div>
-            </div>
+        <section id="skills-section" class="content-section">
+            <button class="back-button">&larr; <span data-key="back_to_menu"></span></button>
+            <h2 data-key="nav_skills"></h2>
+            <div id="skills-list" class="skills-grid"></div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_skills"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="skills-list"></div>
-                </div>
-            </div>
+        <section id="projects-section" class="content-section">
+            <button class="back-button">&larr; <span data-key="back_to_menu"></span></button>
+            <h2 data-key="projects_title"></h2>
+            <p class="placeholder-text" data-key="projects_placeholder"></p>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="projects_title"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="projects-content">
-                        <p>Projects content will be loaded here...</p>
-                    </div>
-                </div>
-            </div>
+        <section id="about-section" class="content-section">
+            <button class="back-button">&larr; <span data-key="back_to_menu"></span></button>
+            <h2 data-key="about_title"></h2>
+            <p id="about-text" class="about-content"></p>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="about_title"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="about-text" data-key="about_text"></div>
-                </div>
-            </div>
-        </section>
     </div>
 
     <script src="js/main.js"></script>
