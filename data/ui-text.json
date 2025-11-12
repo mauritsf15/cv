@@ -6,7 +6,13 @@
     "nav_skills": "Vaardigheden",
     "nav_projects": "Projecten",
     "nav_about": "Over Mij",
-    "about_title": "Over Mij",
-    "about_text": "Hallo! Ik ben Maurits, een gepassioneerde software ontwikkelaar met een sterke focus op het creëren van elegante en gebruiksvriendelijke web applicaties.\n\nMet meer dan 5 jaar ervaring in full-stack development, combineer ik technische expertise met een oog voor design om digitale oplossingen te bouwen die echt verschil maken.\n\nIk ben altijd op zoek naar nieuwe uitdagingen en mogelijkheden om te groeien als developer. Of het nu gaat om het optimaliseren van bestaande systemen of het bouwen van iets compleet nieuws vanaf de grond, ik benader elk project met enthousiasme en toewijding.\n\nIn mijn vrije tijd experimenteer ik graag met nieuwe technologieën, draag ik bij aan open source projecten en deel ik mijn kennis met de developer community.",
-    "projects_title": "Mijn Projecten"
+    "about_text": "Hallo! Ik ben Maurits, een gepassioneerde softwareontwikkelaar met een sterke focus op het creëren van elegante en gebruiksvriendelijke websites en applicaties.\n\nMet meer dan vijf jaar ervaring in full-stack development, combineer ik technische kennis met een oog voor design om digitale oplossingen te bouwen die écht opvallen.\n\nIk ben altijd op zoek naar nieuwe uitdagingen en mogelijkheden om te groeien als ontwikkelaar. Programmeren is al van jongs af aan een hobby van mij, waardoor ik van nature nieuwsgierig ben naar nieuwe technologieën en altijd wil blijven leren. Elk project benader ik dan ook met een hoop passie en toewijding!\n\nIn mijn vrije tijd experimenteer ik met technologieën waar ik nog niet mee bekend ben; kennis die ik later weer inzet in toekomstige projecten.\n\nTechnologie verandert snel, en juist dat inspireert me om te blijven ontdekken. Ik wil bijdragen aan innovatieve projecten die niet alleen technisch sterk zijn, maar ook mensen helpen in hun dagelijks leven.",
+    "projects_title": "Mijn Projecten",
+    "nav": {
+        "about": "Over Mij",
+        "experience": "Ervaring",
+        "academic": "Opleiding",
+        "skills": "Vaardigheden",
+        "projects": "Projecten"
+    }
 }

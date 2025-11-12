@@ -6,7 +6,8 @@
         "endDate": "aug. 2019",
         "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker.",
         "year": 2019,
-        "icon": "hammer"
+        "icon": "hammer",
+        "skills": ["Klantgericht", "Teamwork", "Communicatie"]
     },
     {
         "id": 1,
@@ -15,7 +16,8 @@
         "endDate": "okt. 2021",
         "description": "Vakkenvuller en magazijnmedewerker.",
         "year": 2021,
-        "icon": "shop"
+        "icon": "shop",
+        "skills": ["Teamwork", "Nauwkeurigheid"]
     },
     {
         "id": 2,
@@ -24,7 +26,8 @@
         "endDate": "okt. 2022",
         "description": "Voor verschillende goede doelen en commerciële organisaties abonnementen verkocht.",
         "year": 2022,
-        "icon": "cash-coin"
+        "icon": "cash-coin",
+        "skills": ["Verkoop", "Doorzettingsvermogen", "Communicatie"]
     },
     {
         "id": 3,
@@ -33,7 +36,8 @@
         "endDate": "juni 2023",
         "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken op straat of op evenementen.",
         "year": 2023,
-        "icon": "star"
+        "icon": "star",
+        "skills": ["Communicatie", "Verkoop", "Presentatie"]
     },
     {
         "id": 4,
@@ -42,16 +46,18 @@
         "endDate": "aug. 2023",
         "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook webshop pakketten ingepakt en opgestuurd.",
         "year": 2023,
-        "icon": "shop"
+        "icon": "shop",
+        "skills": ["Klantgericht", "Verkoop", "Teamwork"]
     },
     {
         "id": 5,
         "company": "Vermaat",
         "startDate": "jul. 2023",
         "endDate": "aug. 2023",
-        "description": "Bij een La Place restaurant in Duinrell gewerkt onder andere achter de kassa gestaan, eten bereiden en schoonmaken.",
+        "description": "Bij een La Place restaurant in Duinrell gewerkt waarbij ik onder andere achter de kassa heb gestaan, eten bereid en schoongemaakt.",
         "year": 2023,
-        "icon": "egg-fried"
+        "icon": "egg-fried",
+        "skills": ["Klantgericht", "Teamwork", "Snelheid"]
     },
     {
         "id": 6,
@@ -60,7 +66,13 @@
         "endDate": "juni 2024",
         "description": "Via International Office van ROC Mondriaan voor twee internationale organisaties een webapp gemaakt, daarnaast ook een native iOS en Android app.",
         "year": 2024,
-        "icon": "terminal"
+        "icon": "terminal",
+        "skills": {
+            "Webontwikkeling": "code",
+            "App ontwikkeling": "mobile",
+            "Teamwork": "users",
+            "Probleemoplossing": "lightbulb"
+        }
     },
     {
         "id": 7,
@@ -69,6 +81,12 @@
         "endDate": "heden",
         "description": "Betrouwbare klantenservice aanbieden voor klanten van KPN op het kantoor in Amsterdam. Klanten ondersteund op technische en administratieve vlakken.",
         "year": 2025,
-        "icon": "telephone"
+        "icon": "telephone",
+        "skills": {
+            "Klantenservice": "headset",
+            "Technische ondersteuning": "gear",
+            "Communicatie": "megaphone",
+            "Probleemoplossing": "lightbulb"
+        }
     }
 ]

@@ -1,358 +1,129 @@
-// State Management
-const state = {
-    currentLanguage: localStorage.getItem('language') || 'nl',
-    currentTheme: localStorage.getItem('theme') || 'light',
-    currentSection: 'home',
-    data: {
-        nl: {},
-        en: {}
+// Animated Text
+
+const animationText = document.querySelector('.animation');
+let animationTextLength;
+
+function prepare() {
+    let localText = '';
+    animationTextLength = animationText.innerText.length;
+    for (let i = 0; i < animationText.innerText.length; i++) {
+        localText += `<span class="letter-${i} letter">${animationText.innerText.charAt(i)}</span>`;
+    }
+    animationText.innerHTML = localText;
+}
+
+function animate() {
+    let rand = Math.round(Math.random()*200 + 55);
+    let rand2 = Math.round(Math.random()*200 + 55);
+    let rand3 = Math.round(Math.random()*200 + 55);
+    let color = `rgb(${rand}, ${rand2}, ${rand3})`;
+    for (i = 0; i < animationTextLength; i++) {
+        let letter = document.querySelector(`.letter-${i}`)
+        setTimeout(function() {letter.style.color = color}, i * 100);
+        setTimeout(function() {letter.style.color = 'inherit'}, i * 100 + 600);
+    }
+    setTimeout(animate, i*200 + 1000);
+}
+
+if (animationText) {
+    setTimeout(prepare, 800);
+    setTimeout(animate, 1000);
+}
+
+// Fill UI text
+const uiTextElements = document.querySelectorAll('[data-ui-text]');
+
+async function loadUIText() {
+    try {
+        const res = await fetch('data/ui-text.json');
+        if (!res.ok) throw new Error(`Failed to fetch UI text: ${res.status}`);
+        const texts = await res.json();
+
+        uiTextElements.forEach(el => {
+            const key = el.dataset.uiText;
+            if (!key) return;
+            // support dot notation like "nav.home"
+            const value = key.split('.').reduce((obj, k) => (obj && obj[k] !== undefined) ? obj[k] : undefined, texts);
+            if (value !== undefined) el.textContent = value;
+        });
+    } catch (err) {
+        console.error('Error loading UI text:', err);
     }
 };
 
-// Initialize on DOM load
-document.addEventListener('DOMContentLoaded', () => {
-    initializeApp();
-});
+loadUIText();
 
-async function initializeApp() {
-    // Apply saved theme
-    if (state.currentTheme === 'dark') {
-        document.body.classList.add('dark-mode');
+// Calculate age
+
+function calculateAge(birthDate) {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
     }
-    
-    // Apply saved language to toggle
-    const langToggle = document.querySelector('.language-toggle');
-    if (state.currentLanguage === 'en') {
-        langToggle.classList.add('en');
-    }
-    
-    // Load initial content
-    await loadContent(state.currentLanguage);
-    
-    // Set up event listeners
-    setupEventListeners();
-    
-    // Initialize skill bars after a short delay
-    setTimeout(() => {
-        animateSkillBars();
-    }, 500);
+    return age;
 }
 
-// Main content loading function
-async function loadContent(language) {
-    const basePath = language === 'en' ? 'data-en' : 'data';
-    
+const birthDate = new Date(2004, 6, 5); // July 5, 2004 (months are 0-indexed)
+const age = calculateAge(birthDate);
+const ageElements = document.querySelectorAll('[data-age]');
+
+ageElements.forEach(el => el.textContent = age);
+
+// Timeline rendering for experiences
+async function loadExperienceTimeline() {
     try {
-        // Show loading state
-        document.body.classList.add('loading');
-        
-        // Fetch all JSON files
-        const [uiText, experience, academic, skills] = await Promise.all([
-            fetch(`${basePath}/ui-text.json`).then(r => r.json()),
-            fetch(`${basePath}/experience.json`).then(r => r.json()),
-            fetch(`${basePath}/academic.json`).then(r => r.json()),
-            fetch(`${basePath}/skills.json`).then(r => r.json())
-        ]);
-        
-        // Store data
-        state.data[language] = {
-            uiText,
-            experience,
-            academic,
-            skills
-        };
-        
-        // Update UI text
-        updateUIText(uiText);
-        
-        // Update dynamic content
-        updateExperience(experience);
-        updateEducation(academic);
-        updateSkills(skills);
-        
-        // Update current language
-        state.currentLanguage = language;
-        localStorage.setItem('language', language);
-        
-    } catch (error) {
-        console.error('Error loading content:', error);
-        // Fallback: create sample data if files not found
-        createSampleData(language);
-    } finally {
-        document.body.classList.remove('loading');
+        const res = await fetch('data/experience.json');
+        if (!res.ok) throw new Error(`Failed to fetch experience: ${res.status}`);
+        const experiences = await res.json();
+        renderTimeline(experiences);
+    } catch (err) {
+        console.error('Error loading experiences:', err);
+        const container = document.getElementById('timeline-items');
+        if (container) container.innerHTML = '<p class="text-danger">Could not load experience data.</p>';
     }
 }
 
-// Update UI text based on data-key attributes
-function updateUIText(uiText) {
-    document.querySelectorAll('[data-key]').forEach(element => {
-        const key = element.getAttribute('data-key');
-        if (uiText[key]) {
-            element.textContent = uiText[key];
-        }
-    });
-}
+function renderTimeline(items) {
+    const container = document.getElementById('timeline-items');
+    if (!container) return;
 
-// Update experience section
-function updateExperience(experienceData) {
-    const container = document.querySelector('.experience-list');
-    container.innerHTML = '';
-    
-    // Reverse the array to show latest first
-    [...experienceData].reverse().forEach(exp => {
-        const item = document.createElement('div');
-        item.className = 'experience-item';
-        item.innerHTML = `
-            <div class="experience-header">
-                <h3 class="experience-company">${exp.company}</h3>
-                <span class="experience-dates">${exp.startDate} - ${exp.endDate}</span>
-            </div>
-            <p class="experience-description">${exp.description}</p>
-        `;
-        container.appendChild(item);
-    });
-}
+    // Sort by year descending then by id
+    items.sort((a, b) => (b.year || 0) - (a.year || 0) || (b.id || 0) - (a.id || 0));
 
-// Update education section
-function updateEducation(academicData) {
-    const container = document.querySelector('.education-list');
     container.innerHTML = '';
-    
-    // Reverse the array to show latest first
-    [...academicData].reverse().forEach(edu => {
-        const item = document.createElement('div');
-        item.className = 'education-item';
+
+    items.forEach((it, idx) => {
+        const item = document.createElement('article');
+        item.className = 'timeline-item card mb-4';
         item.innerHTML = `
-            <div class="education-header">
-                <div>
-                    <h3 class="education-school">${edu.school}</h3>
-                    <p class="education-study">${edu.study}</p>
+            <div class="timeline-marker" aria-hidden="true"><i class="bi bi-${it.icon}" aria-hidden="true"></i></div>
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                        <h3 class="h5 mb-1">${it.company}</h3>
+                        <div class="text-muted small">${it.startDate || ''} — ${it.endDate || ''}</div>
+                    </div>
                 </div>
-                <span class="education-years">${edu.startYear} - ${edu.endYear}</span>
-            </div>
-            <p class="education-description">${edu.description}</p>
-        `;
-        container.appendChild(item);
-    });
-}
-
-// Update skills section
-function updateSkills(skillsData) {
-    const container = document.querySelector('.skills-list');
-    container.innerHTML = '';
-    
-    skillsData.forEach(skill => {
-        const item = document.createElement('div');
-        item.className = 'skill-item';
-        item.innerHTML = `
-            <div class="skill-header">
-                <span class="skill-name">${skill.name}</span>
-                <span class="skill-percentage">${skill.amount}%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-percentage="${skill.amount}"></div>
+                <p class="mb-1">${it.description || ''}</p>
             </div>
         `;
+
         container.appendChild(item);
     });
-    
-    // Re-animate skill bars if on skills page
-    if (state.currentSection === 'skills') {
-        setTimeout(animateSkillBars, 100);
-    }
-}
 
-// Animate skill bars
-function animateSkillBars() {
-    document.querySelectorAll('.skill-progress').forEach(bar => {
-        const percentage = bar.getAttribute('data-percentage');
-        bar.style.width = '0%';
-        setTimeout(() => {
-            bar.style.width = percentage + '%';
-        }, 100);
-    });
-}
-
-// Set up all event listeners
-function setupEventListeners() {
-    // Theme toggle
-    document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
-    
-    // Language toggle
-    document.querySelector('.language-toggle').addEventListener('click', toggleLanguage);
-    
-    // Navigation buttons
-    document.querySelectorAll('.nav-button').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const targetSection = e.target.getAttribute('data-section');
-            navigateToSection(targetSection);
+    // Add intersection observer for reveal animation
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('in-view');
         });
-    });
-    
-    // Back buttons
-    document.querySelectorAll('.back-button').forEach(button => {
-        button.addEventListener('click', () => {
-            navigateToSection('home');
-        });
-    });
-}
+    }, { threshold: 0.12 });
 
-// Theme toggle function
-function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    state.currentTheme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-    localStorage.setItem('theme', state.currentTheme);
-}
+    document.querySelectorAll('.timeline-item').forEach(el => obs.observe(el));
+};
 
-// Language toggle function
-async function toggleLanguage() {
-    const langToggle = document.querySelector('.language-toggle');
-    const newLanguage = state.currentLanguage === 'nl' ? 'en' : 'nl';
-    
-    langToggle.classList.toggle('en');
-    await loadContent(newLanguage);
-}
-
-// Navigation function
-function navigateToSection(sectionId) {
-    const currentSection = document.querySelector('.section.active');
-    const targetSection = document.getElementById(sectionId);
-    
-    if (!targetSection || currentSection.id === sectionId) return;
-    
-    // Add transitioning class to body for shape animations
-    document.body.classList.add('section-transitioning');
-    
-    // Slide out current section
-    currentSection.classList.add('slide-out-left');
-    currentSection.classList.remove('active');
-    
-    // Slide in target section
-    setTimeout(() => {
-        currentSection.classList.remove('slide-out-left');
-        targetSection.classList.add('active');
-        state.currentSection = sectionId;
-        
-        // Animate skill bars if navigating to skills
-        if (sectionId === 'skills') {
-            setTimeout(animateSkillBars, 300);
-        }
-        
-        // Remove transitioning class
-        setTimeout(() => {
-            document.body.classList.remove('section-transitioning');
-        }, 500);
-    }, 300);
-}
-
-// Create sample data if JSON files are not available
-function createSampleData(language) {
-    const sampleData = {
-        nl: {
-            uiText: {
-                name: "Maurits Fokkens",
-                job_title: "Software Ontwikkelaar",
-                nav_experience: "Ervaring",
-                nav_education: "Opleiding",
-                nav_skills: "Vaardigheden",
-                nav_projects: "Projecten",
-                nav_about: "Over Mij",
-                about_title: "Over Mij",
-                about_text: "Hallo! Ik ben een gepassioneerde software ontwikkelaar.\nIk hou van het creëren van mooie en functionele web applicaties.",
-                projects_title: "Mijn Projecten"
-            },
-            experience: [
-                {
-                    id: 1,
-                    company: "Tech Bedrijf NL",
-                    startDate: "Jan 2020",
-                    endDate: "Heden",
-                    description: "Full-stack ontwikkeling van web applicaties met moderne technologieën.",
-                    year: 2020
-                },
-                {
-                    id: 2,
-                    company: "Startup XYZ",
-                    startDate: "Jun 2018",
-                    endDate: "Dec 2019",
-                    description: "Frontend ontwikkeling en UI/UX design voor diverse projecten.",
-                    year: 2018
-                }
-            ],
-            academic: [
-                {
-                    id: 1,
-                    school: "Technische Universiteit",
-                    study: "Computer Science",
-                    startYear: "2014",
-                    endYear: "2018",
-                    description: "Bachelor in Computer Science met focus op web technologieën."
-                }
-            ],
-            skills: [
-                { id: 1, name: "JavaScript", amount: 90 },
-                { id: 2, name: "HTML/CSS", amount: 95 },
-                { id: 3, name: "React", amount: 85 },
-                { id: 4, name: "Node.js", amount: 80 },
-                { id: 5, name: "Python", amount: 75 }
-            ]
-        },
-        en: {
-            uiText: {
-                name: "Maurits Fokkens",
-                job_title: "Software Developer",
-                nav_experience: "Experience",
-                nav_education: "Education",
-                nav_skills: "Skills",
-                nav_projects: "Projects",
-                nav_about: "About Me",
-                about_title: "About Me",
-                about_text: "Hello! I'm a passionate software developer.\nI love creating beautiful and functional web applications.",
-                projects_title: "My Projects"
-            },
-            experience: [
-                {
-                    id: 1,
-                    company: "Tech Company NL",
-                    startDate: "Jan 2020",
-                    endDate: "Present",
-                    description: "Full-stack development of web applications using modern technologies.",
-                    year: 2020
-                },
-                {
-                    id: 2,
-                    company: "Startup XYZ",
-                    startDate: "Jun 2018",
-                    endDate: "Dec 2019",
-                    description: "Frontend development and UI/UX design for various projects.",
-                    year: 2018
-                }
-            ],
-            academic: [
-                {
-                    id: 1,
-                    school: "Technical University",
-                    study: "Computer Science",
-                    startYear: "2014",
-                    endYear: "2018",
-                    description: "Bachelor in Computer Science with focus on web technologies."
-                }
-            ],
-            skills: [
-                { id: 1, name: "JavaScript", amount: 90 },
-                { id: 2, name: "HTML/CSS", amount: 95 },
-                { id: 3, name: "React", amount: 85 },
-                { id: 4, name: "Node.js", amount: 80 },
-                { id: 5, name: "Python", amount: 75 }
-            ]
-        }
-    };
-    
-    const data = sampleData[language];
-    state.data[language] = data;
-    
-    updateUIText(data.uiText);
-    updateExperience(data.experience);
-    updateEducation(data.academic);
-    updateSkills(data.skills);
-}
+// Initialize timeline after UI text and age are set
+document.addEventListener('DOMContentLoaded', () => {
+    loadExperienceTimeline();
+});
