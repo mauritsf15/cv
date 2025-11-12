@@ -100,6 +100,7 @@ body {
 
 .timeline-marker {
   position: absolute;
+  /* center marker on the timeline line */
   left: calc(var(--timeline-offset) / -2);
   transform: translateX(-50%);
   top: 18px;
@@ -127,6 +128,59 @@ body {
   border-radius: 0.375rem;
   padding: 12px 14px;
   border: 1px solid rgba(0,0,0,0.04);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Skills column (right on desktop, bottom on mobile) */
+.skills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  min-width: 160px;
+}
+
+.skill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.04);
+  border: none;
+  cursor: pointer;
+}
+
+.skill i { font-size: 1rem; color: var(--text); }
+
+.skill .skill-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 8px);
+  white-space: nowrap;
+  background: var(--text);
+  color: var(--background);
+  padding: 6px 8px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease, transform 160ms ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 6;
+}
+
+.skill:hover .skill-tooltip,
+.skill.show .skill-tooltip {
+  opacity: 1;
+  transform: translate(-50%, -8px);
+  pointer-events: auto;
 }
 
 @media (max-width: 768px) {
@@ -134,4 +188,7 @@ body {
   .timeline-line { left: calc(var(--timeline-offset) / 2); }
   .timeline-marker { left: calc(var(--timeline-offset) / -2); width: 32px; height: 32px; top: 12px; }
   .timeline-marker i { font-size: .95rem; }
+  /* stack card content and put skills under content */
+  .timeline-item .card-body { flex-direction: column; }
+  .skills { order: 2; justify-content: flex-start; width: 100%; }
 }

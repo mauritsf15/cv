@@ -7,7 +7,11 @@
         "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker.",
         "year": 2019,
         "icon": "hammer",
-        "skills": ["Klantgericht", "Teamwork", "Communicatie"]
+        "skills": {
+            "Klantgericht": "headset",
+            "Teamwork": "users",
+            "Communicatie": "megaphone"
+        }
     },
     {
         "id": 1,
@@ -17,7 +21,10 @@
         "description": "Vakkenvuller en magazijnmedewerker.",
         "year": 2021,
         "icon": "shop",
-        "skills": ["Teamwork", "Nauwkeurigheid"]
+        "skills": {
+            "Teamwork": "users",
+            "Nauwkeurigheid": "check"
+        }
     },
     {
         "id": 2,
@@ -27,7 +34,12 @@
         "description": "Voor verschillende goede doelen en commerciële organisaties abonnementen verkocht.",
         "year": 2022,
         "icon": "cash-coin",
-        "skills": ["Verkoop", "Doorzettingsvermogen", "Communicatie"]
+        "skills": {
+            "Verkoop": "cash-coin",
+            "Communicatie": "megaphone",
+            "Doorzettingsvermogen": "muscle",
+            "Enthousiasme": "party-popper"
+        }
     },
     {
         "id": 3,
@@ -37,7 +49,12 @@
         "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken op straat of op evenementen.",
         "year": 2023,
         "icon": "star",
-        "skills": ["Communicatie", "Verkoop", "Presentatie"]
+        "skills": {
+            "Communicatie": "megaphone",
+            "Verkoop": "cash-coin",
+            "Enthousiasme": "party-popper",
+            "Doorzettingsvermogen": "muscle"
+        }
     },
     {
         "id": 4,
@@ -47,7 +64,12 @@
         "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook webshop pakketten ingepakt en opgestuurd.",
         "year": 2023,
         "icon": "shop",
-        "skills": ["Klantgericht", "Verkoop", "Teamwork"]
+        "skills": {
+            "Klantgericht": "headset",
+            "Productkennis": "shoe-prints",
+            "Teamwork": "users",
+            "Communicatie": "megaphone"
+        }
     },
     {
         "id": 5,
@@ -57,7 +79,12 @@
         "description": "Bij een La Place restaurant in Duinrell gewerkt waarbij ik onder andere achter de kassa heb gestaan, eten bereid en schoongemaakt.",
         "year": 2023,
         "icon": "egg-fried",
-        "skills": ["Klantgericht", "Teamwork", "Snelheid"]
+        "skills": {
+            "Klantgericht": "headset",
+            "Teamwork": "users",
+            "Snelheid": "clock",
+            "Hygiëne": "broom"
+        }
     },
     {
         "id": 6,
