@@ -76,14 +76,13 @@
         "company": "Vermaat",
         "startDate": "jul. 2023",
         "endDate": "aug. 2023",
-        "description": "Bij een La Place restaurant in Duinrell gewerkt waarbij ik onder andere achter de kassa heb gestaan, eten bereid en schoongemaakt.",
+        "description": "Bij La Place in Duinrell gewerkt, waar ik onder andere achter de kassa stond, eten bereidde en schoonmaakte.",
         "year": 2023,
         "icon": "egg-fried",
         "skills": {
             "Klantgericht": "headset",
             "Teamwork": "users",
-            "Snelheid": "clock",
-            "Hygiëne": "broom"
+            "Snelheid": "clock"
         }
     },
     {
@@ -103,10 +102,10 @@
     },
     {
         "id": 7,
-        "company": "KPN",
+        "company": "KPN/XS4ALL",
         "startDate": "okt. 2024",
         "endDate": "heden",
-        "description": "Betrouwbare klantenservice aanbieden voor klanten van KPN op het kantoor in Amsterdam. Klanten ondersteund op technische en administratieve vlakken.",
+        "description": "Betrouwbare technische klantenservice aanbieden voor klanten van XS4ALL en KPN op het kantoor in Amsterdam. Klanten ondersteund op professionele wijze met technische en administratieve vraagstukken.",
         "year": 2025,
         "icon": "telephone",
         "skills": {

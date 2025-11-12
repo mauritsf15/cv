@@ -120,16 +120,6 @@ function renderTimeline(items) {
         check: 'bi-check'
     };
 
-    function escapeHtml(str) {
-        if (!str && str !== 0) return '';
-        return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
-    }
-
     items.forEach((it, idx) => {
         const iconCls = iconMap[it.icon] || (`bi-${it.icon}`) || 'bi-briefcase';
         const item = document.createElement('article');
@@ -153,13 +143,12 @@ function renderTimeline(items) {
         item.innerHTML = `
             <div class="timeline-marker" aria-hidden="true"><i class="bi ${iconCls}" aria-hidden="true"></i></div>
             <div class="card-body d-flex flex-column flex-md-row gap-3">
-                <div class="job-content">
+                <div class="job-content flex-fill">
                     <div class="d-flex justify-content-between align-items-start mb-2">
                         <div>
                             <h3 class="h5 mb-1">${escapeHtml(it.company)}</h3>
                             <div class="text-muted small">${escapeHtml(it.startDate || '')} — ${escapeHtml(it.endDate || '')}</div>
                         </div>
-                        <div class="text-end small text-secondary">${escapeHtml(it.year || '')}</div>
                     </div>
                     <p class="mb-1">${escapeHtml(it.description || '')}</p>
                 </div>
@@ -208,4 +197,49 @@ function renderTimeline(items) {
 // Initialize timeline after UI text and age are set
 document.addEventListener('DOMContentLoaded', () => {
     loadExperienceTimeline();
+    loadAcademic();
 });
+
+// Academic list rendering
+async function loadAcademic() {
+    try {
+        const res = await fetch('data/academic.json');
+        if (!res.ok) throw new Error(`Failed to fetch academic: ${res.status}`);
+        const items = await res.json();
+        renderAcademic(items);
+    } catch (err) {
+        console.error('Error loading academic:', err);
+        const container = document.getElementById('academic-list');
+        if (container) container.innerHTML = '<p class="text-danger">Could not load academic data.</p>';
+    }
+}
+
+function renderAcademic(items) {
+    const container = document.getElementById('academic-list');
+    if (!container) return;
+
+    // sort by startYear descending
+    items.sort((a,b) => (b.startYear || 0) - (a.startYear || 0));
+    container.innerHTML = '';
+
+    items.forEach(it => {
+        const el = document.createElement('div');
+        el.className = 'academic-item';
+        el.innerHTML = `
+            <h4>${escapeHtml(it.school)} — <small class="text-muted">${escapeHtml(it.study)}</small></h4>
+            <div class="meta">${escapeHtml(it.startYear || '')} — ${escapeHtml(it.endYear || '')}</div>
+            <div class="description">${escapeHtml(it.description || '')}</div>
+        `;
+        container.appendChild(el);
+    });
+}
+
+function escapeHtml(str) {
+    if (!str && str !== 0) return '';
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
