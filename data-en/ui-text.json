@@ -1,12 +1,13 @@
 {
     "name": "Maurits Fokkens",
     "job_title": "Software Developer",
-    "nav_experience": "Experience",
-    "nav_education": "Education",
-    "nav_skills": "Skills",
-    "nav_projects": "Projects",
-    "nav_about": "About Me",
-    "about_title": "About Me",
     "about_text": "Hello! I'm Maurits, a passionate software developer with a strong focus on creating elegant and user-friendly web applications.\n\nWith over 5 years of experience in full-stack development, I combine technical expertise with an eye for design to build digital solutions that truly make a difference.\n\nI'm always looking for new challenges and opportunities to grow as a developer. Whether it's optimizing existing systems or building something completely new from scratch, I approach every project with enthusiasm and dedication.\n\nIn my free time, I enjoy experimenting with new technologies, contributing to open source projects, and sharing my knowledge with the developer community.",
-    "projects_title": "My Projects"
+    "projects_title": "My Projects",
+    "nav": {
+        "about": "About Me",
+        "experience": "Experience",
+        "academic": "Education",
+        "skills": "Skills",
+        "projects": "Projects"
+    }
 }

@@ -1,121 +1,89 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maurits Fokkens - CV</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>CV - Maurits Fokkens</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
 <body>
-    <!-- Background Animated Shapes -->
-    <div class="animated-shapes">
-        <div class="shape shape-1"></div>
-        <div class="shape shape-2"></div>
-        <div class="shape shape-3"></div>
-        <div class="shape shape-4"></div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand" href="#">CV - Maurits Fokkens</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-me" data-ui-text="nav.about"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience" data-ui-text="nav.experience"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#academic" data-ui-text="nav.academic"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" data-ui-text="nav.skills"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="about-me" class="container mt-5">
+        <div class="d-md-flex justify-content-between gap-5">
+            <div>
+                <hr>
+                <p data-ui-text="about_text" class="about-text"></p>
+            </div>
+            <div class="about-header">
+                <h1 class="text-md-end"><span data-ui-text="name"></span> (<span data-age></span>)</h1>
+                <h4 data-ui-text="job_title" class="animation"></h4>
+                <img src="images/profile.png" alt="Profile Picture" class="profile-image">
+            </div>
+        </div>
     </div>
 
-    <!-- Fixed Controls -->
-    <div class="fixed-controls">
-        <button class="theme-toggle" aria-label="Toggle theme">
-            <span class="sun-icon">☀️</span>
-            <span class="moon-icon">🌙</span>
-        </button>
-        <button class="language-toggle">
-            <span class="lang-nl">NL</span>
-            <span class="separator">/</span>
-            <span class="lang-en">EN</span>
-        </button>
+    <hr>
+
+    <div id="experience" class="container mt-5">
+        <h2 data-ui-text="nav.experience" class="mb-3"></h2>
+        <div class="timeline">
+            <div class="timeline-line" aria-hidden="true"></div>
+            <div class="timeline-items" id="timeline-items">
+                <!-- Timeline items will be rendered here by js/main.js -->
+            </div>
+        </div>
     </div>
 
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Home/Menu Section -->
-        <section id="home" class="section active">
-            <div class="content">
-                <h1 class="name" data-key="name"></h1>
-                <p class="job-title" data-key="job_title"></p>
-                
-                <nav class="main-nav">
-                    <button class="nav-button" data-section="experience" data-key="nav_experience"></button>
-                    <button class="nav-button" data-section="education" data-key="nav_education"></button>
-                    <button class="nav-button" data-section="skills" data-key="nav_skills"></button>
-                    <button class="nav-button" data-section="projects" data-key="nav_projects"></button>
-                    <button class="nav-button" data-section="about" data-key="nav_about"></button>
-                </nav>
-            </div>
-        </section>
+    <hr>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_experience"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="experience-list"></div>
+    <div id="academic" class="container mt-5">
+        <h2 data-ui-text="nav.academic" class="mb-3"></h2>
+        <div class="row academic-row align-items-start">
+            <div class="col-md academic-list order-md-2" id="academic-list" aria-live="polite">
+                <!-- Academic items will be rendered here by js/main.js -->
+            </div>
+            <div class="col-md academic-image order-md-1">
+                <div class="academic-img">
+                    <img src="img/schoolwork.png" alt="Rotterdam" />
                 </div>
             </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_education"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="education-list"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="nav_skills"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="skills-list"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="projects_title"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="projects-content">
-                        <p>Projects content will be loaded here...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section">
-            <div class="content">
-                <div class="content-header">
-                    <button class="back-button">← Back</button>
-                    <h2 data-key="about_title"></h2>
-                </div>
-                <div class="content-body">
-                    <div class="about-text" data-key="about_text"></div>
-                </div>
-            </div>
-        </section>
+        </div>
     </div>
+
+    <hr>
+
+
 
     <script src="js/main.js"></script>
 </body>
