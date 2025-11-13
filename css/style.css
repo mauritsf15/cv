@@ -46,6 +46,10 @@ body {
   max-width: 720px;
 }
 
+.description {
+  white-space: pre-line;
+}
+
 .about-header {
   display: flex;
   flex-direction: column;
@@ -91,6 +95,22 @@ body {
   opacity: 0;
   transform: translateY(18px);
   transition: transform 520ms cubic-bezier(.2,.9,.2,1), opacity 420ms ease;
+}
+
+.timeline-item .card-body {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+}
+
+.timeline-item.in-view:hover,
+.timeline-item.in-view:focus-within {
+  transform: translateY(-6px);
+}
+
+.timeline-item.in-view:hover .card-body,
+.timeline-item.in-view:focus-within .card-body {
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  background-color: rgba(255,255,255,0.98);
 }
 
 .timeline-item.in-view {
@@ -186,7 +206,7 @@ body {
 @media (max-width: 768px) {
   .timeline { --timeline-offset: 40px; padding-left: var(--timeline-offset); }
   .timeline-line { left: calc(var(--timeline-offset) / 2); }
-  .timeline-marker { left: calc(var(--timeline-offset) / 2); width: 32px; height: 32px; top: 12px; }
+  .timeline-marker { left: calc(var(--timeline-offset) / -2); width: 32px; height: 32px; top: 12px; }
   .timeline-marker i { font-size: .95rem; }
   /* stack card content and put skills under content */
   .timeline-item .card-body { flex-direction: column; }
@@ -203,9 +223,17 @@ body {
 .academic-item {
   padding: 10px 6px;
   border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: transform 200ms ease, box-shadow 220ms ease, background-color 200ms ease;
 }
 .academic-item h4 { margin: 0 0 4px 0; font-size: 1.05rem; }
 .academic-item .meta { color: #666; font-size: 0.9rem; }
+
+.academic-item:hover,
+.academic-item:focus-within {
+  transform: translateY(-4px);
+  background-color: rgba(0,0,0,0.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+}
 .academic-img {
   display: flex;
   align-items: center;
