@@ -9,5 +9,9 @@
         "academic": "Education",
         "skills": "Skills",
         "projects": "Projects"
+    },
+    "skills": {
+        "technologies": "Technologies & Frameworks",
+        "soft_skills": "Competencies"
     }
 }

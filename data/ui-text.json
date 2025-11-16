@@ -14,5 +14,9 @@
         "academic": "Opleiding",
         "skills": "Vaardigheden",
         "projects": "Projecten"
+    },
+    "skills": {
+        "technologies": "Technologieën & Frameworks",
+        "soft_skills": "Competenties"
     }
 }

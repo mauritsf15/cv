@@ -198,6 +198,7 @@ function renderTimeline(items) {
 document.addEventListener('DOMContentLoaded', () => {
     loadExperienceTimeline();
     loadAcademic();
+    loadSkills();
 });
 
 // Academic list rendering
@@ -242,4 +243,68 @@ function escapeHtml(str) {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&#39;');
+}
+
+// Skills rendering
+async function loadSkills() {
+    try {
+        const res = await fetch('data/skills.json');
+        if (!res.ok) throw new Error(`Failed to fetch skills: ${res.status}`);
+        const data = await res.json();
+        renderSkills(data);
+    } catch (err) {
+        console.error('Error loading skills:', err);
+        const techContainer = document.getElementById('tech-icons');
+        const skillsContainer = document.getElementById('skills-list');
+        if (techContainer) techContainer.innerHTML = '<p class="text-danger">Could not load skills data.</p>';
+        if (skillsContainer) skillsContainer.innerHTML = '';
+    }
+}
+
+function renderSkills(data) {
+    // Render tech icons (hexagons)
+    const techContainer = document.getElementById('tech-icons');
+    if (techContainer && data.icons) {
+        techContainer.innerHTML = '';
+        data.icons.forEach(tech => {
+            const hexContainer = document.createElement('div');
+            hexContainer.className = 'hexagon-container';
+            hexContainer.setAttribute('title', escapeHtml(tech.name));
+            hexContainer.innerHTML = `
+                <div class="hexagon">
+                    <i class="${escapeHtml(tech.icon)}" aria-hidden="true"></i>
+                </div>
+                <div class="hexagon-label">${escapeHtml(tech.name)}</div>
+            `;
+            techContainer.appendChild(hexContainer);
+        });
+    }
+
+    // Render skills (progress bars)
+    const skillsContainer = document.getElementById('skills-list');
+    if (skillsContainer && data.skills) {
+        skillsContainer.innerHTML = '';
+        data.skills.forEach(skill => {
+            const skillItem = document.createElement('div');
+            skillItem.className = 'skill-item';
+            skillItem.innerHTML = `
+                <div class="skill-name">${escapeHtml(skill.name)}</div>
+                <div class="progress-bar-container" role="progressbar" aria-label="${escapeHtml(skill.name)}" aria-valuenow="${skill.level}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar-fill" style="width: ${skill.level}%"></div>
+                </div>
+            `;
+            skillsContainer.appendChild(skillItem);
+        });
+
+        // Add intersection observer for progress bar animation
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.skill-item').forEach(el => obs.observe(el));
+    }
 }
