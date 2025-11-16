@@ -10,6 +10,9 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </head>
@@ -31,9 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#academic" data-ui-text="nav.academic"></a>
                     </li>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#skills" data-ui-text="nav.skills"></a>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
         </div>
@@ -83,7 +86,27 @@
 
     <hr>
 
+    <div id="skills" class="container mt-5 mb-5">
+        <h2 data-ui-text="nav.skills" class="mb-4"></h2>
+        
+        <!-- Programming Languages / Frameworks -->
+        <div class="mb-5">
+            <h3 class="h5 mb-4 text-muted" data-ui-text="skills.technologies"></h3>
+            <div class="hexagon-grid" id="tech-icons">
+                <!-- Hexagons will be rendered here by js/main.js -->
+            </div>
+        </div>
 
+        <!-- Skills with Progress Bars -->
+        <div>
+            <h3 class="h5 mb-4 text-muted" data-ui-text="skills.soft_skills"></h3>
+            <div class="skills-list" id="skills-list">
+                <!-- Skills will be rendered here by js/main.js -->
+            </div>
+        </div>
+    </div>
+
+    <hr>
 
     <script src="js/main.js"></script>
 </body>

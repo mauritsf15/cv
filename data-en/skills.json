@@ -1,42 +1,86 @@
-[
-    {
-        "id": 0,
-        "name": "Perseverance",
-        "amount": 85
-    },
-    {
-        "id": 1,
-        "name": "Enthusiasm",
-        "amount": 75
-    },
-    {
-        "id": 2,
-        "name": "Social",
-        "amount": 85
-    },
-    {
-        "id": 3,
-        "name": "Eager to learn",
-        "amount": 80
-    },
-    {
-        "id": 4,
-        "name": "Motivation",
-        "amount": 85
-    },
-    {
-        "id": 5,
-        "name": "Communicative",
-        "amount": 80
-    },
-    {
-        "id": 6,
-        "name": "Dutch",
-        "amount": 100
-    },
-    {
-        "id": 7,
-        "name": "English",
-        "amount": 95
-    }
-]
+{
+    "icons": [
+        {
+            "name": "HTML5",
+            "icon": "fab fa-html5"
+        },
+        {
+            "name": "CSS3",
+            "icon": "fab fa-css3-alt"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "fab fa-js-square"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "fas fa-code"
+        },
+        {
+            "name": "Java (+Springboot)",
+            "icon": "fab fa-java"
+        },
+        {
+            "name": "Python (+Flask)",
+            "icon": "fab fa-python"
+        },
+        {
+            "name": "PHP (+Symfony)",
+            "icon": "fab fa-php"
+        },
+        {
+            "name": "Vite",
+            "icon": "fas fa-bolt"
+        },
+        {
+            "name": "Bootstrap",
+            "icon": "fab fa-bootstrap"
+        },
+        {
+            "name": "Node.js",
+            "icon": "fab fa-node-js"
+        },
+        {
+            "name": "Git",
+            "icon": "fab fa-git-alt"
+        },
+        {
+            "name": "MySQL",
+            "icon": "fas fa-database"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Dutch",
+            "level": 100
+        },
+        {
+            "name": "English",
+            "level": 90
+        },
+        {
+            "name": "Customer Service",
+            "level": 95
+        },
+        {
+            "name": "Communication",
+            "level": 92
+        },
+        {
+            "name": "Teamwork",
+            "level": 88
+        },
+        {
+            "name": "Problem Solving",
+            "level": 85
+        },
+        {
+            "name": "Web Development",
+            "level": 82
+        },
+        {
+            "name": "Technical Support",
+            "level": 80
+        }
+    ]
+}

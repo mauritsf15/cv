@@ -8,6 +8,11 @@
         "experience": "Experience",
         "academic": "Education",
         "skills": "Skills",
-        "projects": "Projects"
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "skills": {
+        "technologies": "Technologies & Frameworks",
+        "soft_skills": "Competencies"
     }
 }

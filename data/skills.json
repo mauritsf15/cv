@@ -1,42 +1,86 @@
-[
-    {
-        "id": 0,
-        "name": "Doorzettingsvermogen",
-        "amount": 85
-    },
-    {
-        "id": 1,
-        "name": "Enthousiasme",
-        "amount": 75
-    },
-    {
-        "id": 2,
-        "name": "Sociaal",
-        "amount": 85
-    },
-    {
-        "id": 3,
-        "name": "Leergierig",
-        "amount": 80
-    },
-    {
-        "id": 4,
-        "name": "Motivatie",
-        "amount": 85
-    },
-    {
-        "id": 5,
-        "name": "Communicatief",
-        "amount": 80
-    },
-    {
-        "id": 6,
-        "name": "Nederlands",
-        "amount": 100
-    },
-    {
-        "id": 7,
-        "name": "Engels",
-        "amount": 95
-    }
-]
+{
+    "icons": [
+        {
+            "name": "HTML5",
+            "icon": "fab fa-html5"
+        },
+        {
+            "name": "CSS3",
+            "icon": "fab fa-css3-alt"
+        },
+        {
+            "name": "JavaScript",
+            "icon": "fab fa-js-square"
+        },
+        {
+            "name": "TypeScript",
+            "icon": "fas fa-code"
+        },
+        {
+            "name": "Java (+Springboot)",
+            "icon": "fab fa-java"
+        },
+        {
+            "name": "Python (+Flask)",
+            "icon": "fab fa-python"
+        },
+        {
+            "name": "PHP (+Symfony)",
+            "icon": "fab fa-php"
+        },
+        {
+            "name": "Vite",
+            "icon": "fas fa-bolt"
+        },
+        {
+            "name": "Bootstrap",
+            "icon": "fab fa-bootstrap"
+        },
+        {
+            "name": "Node.js",
+            "icon": "fab fa-node-js"
+        },
+        {
+            "name": "Git",
+            "icon": "fab fa-git-alt"
+        },
+        {
+            "name": "MySQL",
+            "icon": "fas fa-database"
+        }
+    ],
+    "skills": [
+        {
+            "name": "Nederlands",
+            "level": 100
+        },
+        {
+            "name": "Engels",
+            "level": 90
+        },
+        {
+            "name": "Klantcontact",
+            "level": 95
+        },
+        {
+            "name": "Communicatie",
+            "level": 92
+        },
+        {
+            "name": "Teamwork",
+            "level": 88
+        },
+        {
+            "name": "Probleemoplossing",
+            "level": 85
+        },
+        {
+            "name": "Webontwikkeling",
+            "level": 82
+        },
+        {
+            "name": "Technische ondersteuning",
+            "level": 80
+        }
+    ]
+}

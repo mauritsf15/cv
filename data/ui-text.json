@@ -13,6 +13,11 @@
         "experience": "Ervaring",
         "academic": "Opleiding",
         "skills": "Vaardigheden",
-        "projects": "Projecten"
+        "projects": "Projecten",
+        "contact": "Contact"
+    },
+    "skills": {
+        "technologies": "Technologieën & Frameworks",
+        "soft_skills": "Competenties"
     }
 }
