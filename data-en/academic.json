@@ -2,7 +2,7 @@
     {
         "id": 0,
         "school": "Stedelijk Gymnasium Leiden",
-        "study": "VWO",
+        "study": "Gymnasium",
         "startYear": "2016",
         "endYear": "2022",
         "description": ""
@@ -21,6 +21,6 @@
         "study": "HBO-ICT",
         "startYear": "2024",
         "endYear": "CURRENT",
-        "description": "BaSC - HBO-ICT: Software Engineering"
+        "description": "Bachelor HBO-ICT: Software Engineering.\nPropedeuse obtained in June 2025."
     }
 ]
