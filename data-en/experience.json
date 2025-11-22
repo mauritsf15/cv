@@ -2,73 +2,117 @@
     {
         "id": 0,
         "company": "KlusWijs",
-        "startDate": "july 2019",
-        "endDate": "aug. 2019",
+        "startDate": "July 2019",
+        "endDate": "Aug. 2019",
         "description": "Cashier, shelf stocker and customer service employee.",
         "year": 2019,
-        "icon": "hammer"
+        "icon": "hammer",
+        "skills": {
+            "Customer Focus": "headset",
+            "Teamwork": "users",
+            "Communication": "megaphone"
+        }
     },
     {
         "id": 1,
         "company": "Albert Heijn",
-        "startDate": "dec. 2020",
-        "endDate": "oct. 2021",
-        "description": "Shelf stocker and warehouse employee.",
+        "startDate": "Dec. 2020",
+        "endDate": "Oct. 2021",
+        "description": "Shelf stocker and warehouse associate.",
         "year": 2021,
-        "icon": "shop"
+        "icon": "shop",
+        "skills": {
+            "Teamwork": "users",
+            "Accuracy": "check"
+        }
     },
     {
         "id": 2,
         "company": "Pepperminds",
-        "startDate": "apr. 2022",
-        "endDate": "oct. 2022",
+        "startDate": "Apr. 2022",
+        "endDate": "Oct. 2022",
         "description": "Sold subscriptions for various charities and commercial organizations.",
         "year": 2022,
-        "icon": "cash-coin"
+        "icon": "cash-coin",
+        "skills": {
+            "Sales": "cash-coin",
+            "Communication": "megaphone",
+            "Perseverance": "muscle",
+            "Enthusiasm": "party-popper"
+        }
     },
     {
         "id": 3,
         "company": "Megawatt",
-        "startDate": "jan. 2023",
-        "endDate": "june 2023",
-        "description": "Promoted well-known brands such as Samsung, SkyShowtime and Tombola by interacting with customers and getting them interested on the street or at events.",
+        "startDate": "Jan. 2023",
+        "endDate": "Jun. 2023",
+        "description": "Promoted well-known brands such as Samsung, SkyShowtime and Tombola by interacting with customers and creating interest on the street or at events.",
         "year": 2023,
-        "icon": "star"
+        "icon": "star",
+        "skills": {
+            "Communication": "megaphone",
+            "Sales": "cash-coin",
+            "Enthusiasm": "party-popper",
+            "Perseverance": "muscle"
+        }
     },
     {
         "id": 4,
         "company": "Shuz",
-        "startDate": "apr. 2023",
-        "endDate": "aug. 2023",
-        "description": "Helping customers find and purchase the perfect shoes through good and professional customer service with regard to the customer. Also webshop packages packaged and sent.",
+        "startDate": "Apr. 2023",
+        "endDate": "Aug. 2023",
+        "description": "Assisted customers with finding and purchasing the perfect shoes through professional service while packing and shipping webshop orders.",
         "year": 2023,
-        "icon": "shop"
+        "icon": "shop",
+        "skills": {
+            "Customer Focus": "headset",
+            "Product Knowledge": "shoe-prints",
+            "Teamwork": "users",
+            "Communication": "megaphone"
+        }
     },
     {
         "id": 5,
-        "company": "Vermaat",
-        "startDate": "july 2023",
-        "endDate": "aug. 2023",
-        "description": "Worked at a La Place restaurant in Duinrell, including working behind the cash register, preparing food and cleaning.",
+        "company": "Vermaat at La Place (Duinrell)",
+        "startDate": "July 2023",
+        "endDate": "Aug. 2023",
+        "description": "Worked behind the cash register, prepared food and maintained cleanliness at the La Place in Duinrell.",
         "year": 2023,
-        "icon": "egg-fried"
+        "icon": "egg-fried",
+        "skills": {
+            "Customer Focus": "headset",
+            "Teamwork": "users",
+            "Speed": "clock"
+        }
     },
     {
         "id": 6,
         "company": "ROC Mondriaan (internship)",
-        "startDate": "aug. 2023",
-        "endDate": "june 2023",
-        "description": "Developed two webapps and one native iOS/Android app for international organizations through the International Office of ROC Mondriaan.",
+        "startDate": "Aug. 2023",
+        "endDate": "Jun. 2024",
+        "description": "Delivered two web applications and a native iOS/Android app for international partners via the ROC Mondriaan International Office.",
         "year": 2024,
-        "icon": "terminal"
+        "icon": "terminal",
+        "skills": {
+            "Web Development": "code",
+            "App Development": "mobile",
+            "Teamwork": "users",
+            "Problem Solving": "lightbulb"
+        }
     },
     {
         "id": 7,
-        "company": "KPN",
-        "startDate": "oct. 2024",
-        "endDate": "now",
-        "description": "Offering great customer service to clients of telecommunications company KPN. Helped customers with technical and administrative problems.",
+        "company": "KPN/XS4ALL",
+        "startDate": "Oct. 2024",
+        "endDate": "present",
+        "description": "Provide reliable technical customer support for XS4ALL and KPN clients from the Amsterdam office, resolving technical and administrative issues professionally.",
         "year": 2025,
-        "icon": "telephone"
+        "icon": "telephone",
+        "skills": {
+            "Customer Service": "headset",
+            "Technical Support": "gear",
+            "Communication": "megaphone",
+            "Problem Solving": "lightbulb"
+        }
     }
 ]

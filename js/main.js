@@ -3,6 +3,59 @@
 const animationText = document.querySelector('.animation');
 let animationTextLength;
 
+const locale = document.documentElement.lang === 'en' ? 'en' : 'nl';
+const dataFolder = locale === 'en' ? 'data-en' : 'data';
+
+const themeStorageKey = 'preferred-theme';
+const themeToggleButton = document.querySelector('[data-theme-toggle]');
+
+function safeGetStoredTheme() {
+    try {
+        return localStorage.getItem(themeStorageKey);
+    } catch (err) {
+        return null;
+    }
+}
+
+function safeStoreTheme(theme) {
+    try {
+        localStorage.setItem(themeStorageKey, theme);
+    } catch (err) {
+        // ignore storage errors (e.g., in private mode)
+    }
+}
+
+function updateThemeToggleLabel(theme) {
+    const nextLabel = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    if (themeToggleButton) {
+        themeToggleButton.setAttribute('aria-label', nextLabel);
+        themeToggleButton.setAttribute('title', nextLabel);
+        themeToggleButton.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        const hiddenText = themeToggleButton.querySelector('.visually-hidden');
+        if (hiddenText) hiddenText.textContent = nextLabel;
+        const icon = themeToggleButton.querySelector('i');
+        if (icon) icon.className = `bi ${theme === 'dark' ? 'bi-moon-fill' : 'bi-sun-fill'}`;
+    }
+}
+
+function applyTheme(theme, persist = false) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    updateThemeToggleLabel(theme);
+    if (persist) {
+        safeStoreTheme(theme);
+    }
+}
+
+const storedTheme = safeGetStoredTheme();
+const initialTheme = storedTheme === 'dark' ? 'dark' : 'light';
+applyTheme(initialTheme);
+
+themeToggleButton?.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme, true);
+});
+
 function prepare() {
     let localText = '';
     animationTextLength = animationText.innerText.length;
@@ -35,7 +88,7 @@ const uiTextElements = document.querySelectorAll('[data-ui-text]');
 
 async function loadUIText() {
     try {
-        const res = await fetch('data/ui-text.json');
+    const res = await fetch(`${dataFolder}/ui-text.json`);
         if (!res.ok) throw new Error(`Failed to fetch UI text: ${res.status}`);
         const texts = await res.json();
 
@@ -74,7 +127,7 @@ ageElements.forEach(el => el.textContent = age);
 // Timeline rendering for experiences
 async function loadExperienceTimeline() {
     try {
-        const res = await fetch('data/experience.json');
+    const res = await fetch(`${dataFolder}/experience.json`);
         if (!res.ok) throw new Error(`Failed to fetch experience: ${res.status}`);
         const experiences = await res.json();
         renderTimeline(experiences);
@@ -204,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Academic list rendering
 async function loadAcademic() {
     try {
-        const res = await fetch('data/academic.json');
+    const res = await fetch(`${dataFolder}/academic.json`);
         if (!res.ok) throw new Error(`Failed to fetch academic: ${res.status}`);
         const items = await res.json();
         renderAcademic(items);
@@ -248,7 +301,7 @@ function escapeHtml(str) {
 // Skills rendering
 async function loadSkills() {
     try {
-        const res = await fetch('data/skills.json');
+    const res = await fetch(`${dataFolder}/skills.json`);
         if (!res.ok) throw new Error(`Failed to fetch skills: ${res.status}`);
         const data = await res.json();
         renderSkills(data);
