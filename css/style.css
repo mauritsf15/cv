@@ -318,8 +318,10 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 80%;
 }
+
+
 
 .hexagon-container {
   position: relative;
@@ -329,6 +331,10 @@ body {
   justify-content: center;
   transition: transform 0.3s ease;
   cursor: pointer;
+  /* fixed width so labels don't change container size */
+  width: 140px;
+  min-width: 140px;
+  text-align: center;
 }
 
 .hexagon-container:hover {
@@ -341,6 +347,8 @@ body {
   align-items: center;
   justify-content: center;
   line-height: 1;
+  width: 100%;
+  height: auto;
 }
 
 .hexagon::before {
@@ -350,6 +358,9 @@ body {
   display: block;
   transform: rotate(-30deg);
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  /* make pseudo-element flow within fixed container width */
+  width: 100%;
+  height: auto;
 }
 
 .hexagon i {
@@ -364,11 +375,25 @@ body {
 
 .hexagon-label {
   margin-top: 0.5rem;
-  white-space: nowrap;
+  /* allow wrapping so labels don't expand the container */
+  white-space: normal;
+  max-width: 100%;
   font-size: 0.85rem;
   color: var(--text);
   opacity: 0.8;
   font-weight: 400;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* responsive tweak: scale hexagons down on narrow screens */
+@media (max-width: 480px) {
+  .hexagon-grid { max-width: 100%; gap: 1rem; }
+  .hexagon-container { width: 110px; min-width: 110px; }
+  .hexagon::before { font-size: 100px; }
+  .hexagon i { font-size: 2rem; }
+  .hexagon-label { font-size: 0.75rem; }
 }
 
 /* Skills List with Progress Bars */
