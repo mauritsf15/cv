@@ -9,12 +9,32 @@
             "icon": "fab fa-css3-alt"
         },
         {
+            "name": "Bootstrap",
+            "icon": "fab fa-bootstrap"
+        },
+        {
+            "name": "Tailwind CSS",
+            "icon": "fab fa-css3-alt"
+        },
+        {
             "name": "JavaScript",
             "icon": "fab fa-js-square"
         },
         {
             "name": "TypeScript",
             "icon": "fas fa-code"
+        },
+        {
+            "name": "React/Next.js",
+            "icon": "fab fa-react"
+        },
+        {
+            "name": "Vite",
+            "icon": "fas fa-bolt"
+        },
+        {
+            "name": "Node.js",
+            "icon": "fab fa-node-js"
         },
         {
             "name": "Java (+Springboot)",
@@ -29,16 +49,8 @@
             "icon": "fab fa-php"
         },
         {
-            "name": "Vite",
-            "icon": "fas fa-bolt"
-        },
-        {
-            "name": "Bootstrap",
-            "icon": "fab fa-bootstrap"
-        },
-        {
-            "name": "Node.js",
-            "icon": "fab fa-node-js"
+            "name": "Flutter",
+            "icon": "fa-brands fa-flutter"
         },
         {
             "name": "Git",
@@ -47,6 +59,10 @@
         {
             "name": "MySQL",
             "icon": "fas fa-database"
+        },
+        {
+            "name": "Docker",
+            "icon": "fab fa-docker"
         }
     ],
     "skills": [
