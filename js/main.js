@@ -141,8 +141,8 @@ async function loadExperienceTimeline() {
 function renderTimeline(items) {
     const container = document.getElementById('timeline-items');
     if (!container) return;
-    // Sort by year descending then by id
-    items.sort((a, b) => (b.year || 0) - (a.year || 0) || (b.id || 0) - (a.id || 0));
+    // Sort by id descending
+    items.sort((a, b) => (b.id || 0) - (a.id || 0));
 
     container.innerHTML = '';
 
@@ -316,20 +316,38 @@ async function loadSkills() {
 
 function renderSkills(data) {
     // Render tech icons (hexagons)
+    // Render skills categories
     const techContainer = document.getElementById('tech-icons');
-    if (techContainer && data.icons) {
+    if (techContainer && data.categories) {
+        techContainer.className = 'skills-categories-container'; // Changed class
         techContainer.innerHTML = '';
-        data.icons.forEach(tech => {
-            const hexContainer = document.createElement('div');
-            hexContainer.className = 'hexagon-container';
-            hexContainer.setAttribute('title', escapeHtml(tech.name));
-            hexContainer.innerHTML = `
-                <div class="hexagon">
-                    <i class="${escapeHtml(tech.icon)}" aria-hidden="true"></i>
-                </div>
-                <div class="hexagon-label">${escapeHtml(tech.name)}</div>
-            `;
-            techContainer.appendChild(hexContainer);
+        
+        data.categories.forEach(cat => {
+            const catSection = document.createElement('div');
+            catSection.className = 'skill-category';
+            
+            const catHeader = document.createElement('h4');
+            catHeader.className = 'skill-category-title';
+            catHeader.textContent = cat.title;
+            catSection.appendChild(catHeader);
+
+            const grid = document.createElement('div');
+            grid.className = 'skill-grid';
+
+            cat.items.forEach(item => {
+                const skillCard = document.createElement('div');
+                skillCard.className = 'skill-card';
+                skillCard.innerHTML = `
+                    <div class="skill-icon">
+                        <i class="${escapeHtml(item.icon)}" aria-hidden="true"></i>
+                    </div>
+                    <div class="skill-name">${escapeHtml(item.name)}</div>
+                `;
+                grid.appendChild(skillCard);
+            });
+
+            catSection.appendChild(grid);
+            techContainer.appendChild(catSection);
         });
     }
 
