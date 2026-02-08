@@ -1,68 +1,96 @@
 {
-    "icons": [
+    "categories": [
         {
-            "name": "HTML5",
-            "icon": "fab fa-html5"
+            "title": "Frontend Development",
+            "items": [
+                {
+                    "name": "HTML5",
+                    "icon": "fab fa-html5"
+                },
+                {
+                    "name": "CSS3",
+                    "icon": "fab fa-css3-alt"
+                },
+                {
+                    "name": "Bootstrap",
+                    "icon": "fab fa-bootstrap"
+                },
+                {
+                    "name": "Tailwind CSS",
+                    "icon": "fab fa-css3-alt"
+                },
+                {
+                    "name": "JavaScript",
+                    "icon": "fab fa-js-square"
+                },
+                {
+                    "name": "TypeScript",
+                    "icon": "fas fa-code"
+                },
+                {
+                    "name": "React / Next.js",
+                    "icon": "fab fa-react"
+                },
+                {
+                    "name": "Vite",
+                    "icon": "fas fa-bolt"
+                }
+            ]
         },
         {
-            "name": "CSS3",
-            "icon": "fab fa-css3-alt"
+            "title": "Backend Development",
+            "items": [
+                {
+                    "name": "Node.js",
+                    "icon": "fab fa-node-js"
+                },
+                {
+                    "name": "Java (Springboot)",
+                    "icon": "fab fa-java"
+                },
+                {
+                    "name": "Kotlin (Springboot)",
+                    "icon": "fab fa-android"
+                },
+                {
+                    "name": "PHP (Symfony)",
+                    "icon": "fab fa-php"
+                },
+                {
+                    "name": "Python (Flask)",
+                    "icon": "fab fa-python"
+                }
+            ]
         },
         {
-            "name": "Bootstrap",
-            "icon": "fab fa-bootstrap"
+            "title": "Mobile Development",
+            "items": [
+                {
+                    "name": "Flutter",
+                    "icon": "fa-brands fa-flutter"
+                }
+            ]
         },
         {
-            "name": "Tailwind CSS",
-            "icon": "fab fa-css3-alt"
-        },
-        {
-            "name": "JavaScript",
-            "icon": "fab fa-js-square"
-        },
-        {
-            "name": "TypeScript",
-            "icon": "fas fa-code"
-        },
-        {
-            "name": "React/Next.js",
-            "icon": "fab fa-react"
-        },
-        {
-            "name": "Vite",
-            "icon": "fas fa-bolt"
-        },
-        {
-            "name": "Node.js",
-            "icon": "fab fa-node-js"
-        },
-        {
-            "name": "Java (+Springboot)",
-            "icon": "fab fa-java"
-        },
-        {
-            "name": "Python (+Flask)",
-            "icon": "fab fa-python"
-        },
-        {
-            "name": "PHP (+Symfony)",
-            "icon": "fab fa-php"
-        },
-        {
-            "name": "Flutter",
-            "icon": "fa-brands fa-flutter"
-        },
-        {
-            "name": "Git",
-            "icon": "fab fa-git-alt"
-        },
-        {
-            "name": "MySQL",
-            "icon": "fas fa-database"
-        },
-        {
-            "name": "Docker",
-            "icon": "fab fa-docker"
+            "title": "Tools & Databases",
+            "items": [
+                {
+                    "name": "Git",
+                    "icon": "fab fa-git-alt"
+                },
+                {
+                    "name": "MySQL",
+                    "icon": "fas fa-database"
+                },
+                {
+                    "name": "PostgreSQL",
+                    "icon": "fas fa-database"
+                },
+                {
+                    "name": "Docker",
+                    "icon": "fab fa-docker"
+                }
+            ]
         }
     ],
     "skills": [
