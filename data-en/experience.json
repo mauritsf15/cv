@@ -81,10 +81,10 @@
     },
     {
         "id": 6,
-        "company": "ROC Mondriaan (internship)",
+        "company": "ROC Mondriaan",
         "startDate": "Aug. 2023",
         "endDate": "Jun. 2024",
-        "description": "Delivered two web applications and a native iOS/Android app for international partners via the ROC Mondriaan International Office.",
+        "description": "As an intern, delivered two web applications and a native iOS/Android app for international partners via the ROC Mondriaan International Office.",
         "icon": "terminal",
         "skills": {
             "Web Development": "code",

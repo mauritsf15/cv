@@ -67,6 +67,27 @@
             ]
         },
         {
+            "title": "Backend Frameworks",
+            "items": [
+                {
+                    "name": "Spring Boot",
+                    "icon": "fas fa-leaf"
+                },
+                {
+                    "name": "Symfony",
+                    "icon": "fas fa-shield-alt"
+                },
+                {
+                    "name": "FastAPI",
+                    "icon": "fas fa-bolt"
+                },
+                {
+                    "name": "Express.js",
+                    "icon": "fas fa-server"
+                }
+            ]
+        },
+        {
             "title": "Mobile Development",
             "items": [
                 {

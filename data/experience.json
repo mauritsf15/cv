@@ -81,10 +81,10 @@
     },
     {
         "id": 6,
-        "company": "ROC Mondriaan (stage)",
+        "company": "ROC Mondriaan",
         "startDate": "aug. 2023",
         "endDate": "juni 2024",
-        "description": "Via International Office van ROC Mondriaan voor twee internationale organisaties een webapp gemaakt, daarnaast ook een native iOS en Android app.",
+        "description": "Als stagair via International Office van ROC Mondriaan voor twee internationale organisaties een webapp gemaakt, daarnaast ook een native iOS en Android app.",
         "icon": "terminal",
         "skills": {
             "Webontwikkeling": "code",
