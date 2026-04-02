@@ -28,7 +28,11 @@
                     "icon": "fas fa-code"
                 },
                 {
-                    "name": "React / Next.js",
+                    "name": "React",
+                    "icon": "fab fa-react"
+                },
+                {
+                    "name": "Next.js",
                     "icon": "fab fa-react"
                 },
                 {
@@ -45,19 +49,19 @@
                     "icon": "fab fa-node-js"
                 },
                 {
-                    "name": "Java (Springboot)",
+                    "name": "Java",
                     "icon": "fab fa-java"
                 },
                 {
-                    "name": "Kotlin (Springboot)",
+                    "name": "Kotlin",
                     "icon": "fab fa-android"
                 },
                 {
-                    "name": "PHP (Symfony)",
+                    "name": "PHP",
                     "icon": "fab fa-php"
                 },
                 {
-                    "name": "Python (Flask)",
+                    "name": "Python",
                     "icon": "fab fa-python"
                 }
             ]
@@ -89,6 +93,14 @@
                 {
                     "name": "Docker",
                     "icon": "fab fa-docker"
+                },
+                {
+                    "name": "Kubernetes",
+                    "icon": "fas fa-dharmachakra"
+                },
+                {
+                    "name": "ArgoCD",
+                    "icon": "fas fa-ship"
                 }
             ]
         }
