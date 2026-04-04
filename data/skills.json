@@ -63,12 +63,7 @@
                 {
                     "name": "Python",
                     "icon": "fab fa-python"
-                }
-            ]
-        },
-        {
-            "title": "Backend Frameworks",
-            "items": [
+                },
                 {
                     "name": "Spring Boot",
                     "icon": "fas fa-leaf"
