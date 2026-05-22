@@ -141,7 +141,7 @@ async function loadExperienceTimeline() {
 function renderTimeline(items) {
     const container = document.getElementById('timeline-items');
     if (!container) return;
-    // Sort by id descending
+    // Sort by id descending (most recent first)
     items.sort((a, b) => (b.id || 0) - (a.id || 0));
 
     container.innerHTML = '';
@@ -176,35 +176,27 @@ function renderTimeline(items) {
     items.forEach((it, idx) => {
         const iconCls = iconMap[it.icon] || (`bi-${it.icon}`) || 'bi-briefcase';
         const item = document.createElement('article');
-        item.className = 'timeline-item card mb-4';
+        item.className = 'timeline-item';
 
-        // build skills HTML
+        // build skill tags HTML (readable pills instead of icon-only buttons)
         let skillsHtml = '';
         if (it.skills && typeof it.skills === 'object') {
-            skillsHtml = '<div class="skills" role="list">';
+            skillsHtml = '<div class="exp-skills">';
             Object.entries(it.skills).forEach(([label, iconName]) => {
                 const ic = skillIconMap[iconName] || ('bi-' + (iconName || 'circle'));
-                skillsHtml += `
-                    <button type="button" class="skill" role="listitem" aria-label="${escapeHtml(label)}" data-skill="${escapeHtml(label)}" aria-expanded="false">
-                        <i class="bi ${ic}" aria-hidden="true"></i>
-                        <span class="skill-tooltip">${escapeHtml(label)}</span>
-                    </button>`;
+                skillsHtml += `<span class="exp-skill-tag"><i class="bi ${ic}" aria-hidden="true"></i>${escapeHtml(label)}</span>`;
             });
             skillsHtml += '</div>';
         }
 
         item.innerHTML = `
             <div class="timeline-marker" aria-hidden="true"><i class="bi ${iconCls}" aria-hidden="true"></i></div>
-            <div class="card-body d-flex flex-column flex-md-row gap-3">
-                <div class="job-content flex-fill">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h3 class="h5 mb-1">${escapeHtml(it.company)}</h3>
-                            <div class="text-muted small">${escapeHtml(it.startDate || '')} — ${escapeHtml(it.endDate || '')}</div>
-                        </div>
-                    </div>
-                    <p class="mb-1">${escapeHtml(it.description || '')}</p>
+            <div class="card-body">
+                <div class="exp-header">
+                    <h3 class="exp-company">${escapeHtml(it.company)}</h3>
+                    <span class="exp-dates">${escapeHtml(it.startDate || '')} — ${escapeHtml(it.endDate || '')}</span>
                 </div>
+                <p class="exp-description">${escapeHtml(it.description || '')}</p>
                 ${skillsHtml}
             </div>
         `;
@@ -212,39 +204,18 @@ function renderTimeline(items) {
         container.appendChild(item);
     });
 
-    // Add intersection observer for reveal animation
+    // Staggered reveal animation via IntersectionObserver
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
-            if (e.isIntersecting) e.target.classList.add('in-view');
+            if (e.isIntersecting) {
+                // small stagger based on element index within view
+                const delay = [...container.children].indexOf(e.target) * 80;
+                setTimeout(() => e.target.classList.add('in-view'), Math.min(delay, 400));
+            }
         });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.08 });
 
-    document.querySelectorAll('.timeline-item').forEach(el => obs.observe(el));
-
-    // Skill tooltip interaction: on touch/click toggle .show, on hover CSS handles tooltip
-    document.querySelectorAll('.skill').forEach(btn => {
-        // close others when opening
-        btn.addEventListener('click', (e) => {
-            const isShown = btn.classList.toggle('show');
-            btn.setAttribute('aria-expanded', isShown ? 'true' : 'false');
-            // close other open ones
-            document.querySelectorAll('.skill.show').forEach(other => {
-                if (other !== btn) {
-                    other.classList.remove('show');
-                    other.setAttribute('aria-expanded', 'false');
-                }
-            });
-            e.stopPropagation();
-        });
-    });
-
-    // close skill tooltips when clicking outside
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.skill.show').forEach(s => {
-            s.classList.remove('show');
-            s.setAttribute('aria-expanded', 'false');
-        });
-    });
+    container.querySelectorAll('.timeline-item').forEach(el => obs.observe(el));
 };
 
 // Initialize timeline after UI text and age are set
