@@ -111,13 +111,26 @@
         "id": 8,
         "company": "Albert Heijn",
         "startDate": "Feb. 2026",
-        "endDate": "present",
+        "endDate": "July 2026",
         "description": "DevOps Engineer Intern at Albert Heijn (TechNL Labs) at the headquarters in Zaandam. I develop web applications and prototypes, implement features, and resolve technical issues within a multidisciplinary team.",
         "icon": "terminal",
         "skills": {
             "Web Development": "code",
             "Teamwork": "users",
             "Problem Solving": "lightbulb"
+        }
+    },
+    {
+        "id": 9,
+        "company": "Albert Heijn",
+        "startDate": "July 2026",
+        "endDate": "heden",
+        "description": "Working Student DevOps Engineer at Albert Heijn (TechNL Labs) at the headquarters in Zaandam. I support the interns who join TechNL Labs and also work independently on ongoing projects.",
+        "icon": "terminal",
+        "skills": {
+            "Web Development": "code",
+            "Teamwork": "users",
+            "Assistance": "circle-question"
         }
     }
 ]
