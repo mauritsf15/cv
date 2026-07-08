@@ -111,13 +111,26 @@
         "id": 8,
         "company": "Albert Heijn",
         "startDate": "feb. 2026",
-        "endDate": "heden",
+        "endDate": "jul. 2026",
         "description": "DevOps Engineer stagiair bij Albert Heijn (TechNL Labs) op het hoofdkantoor in Zaandam. Ik ontwikkel webapplicaties en prototypes, implementeer features en los technische problemen op binnen een multidisciplinair team.",
         "icon": "terminal",
         "skills": {
             "Webontwikkeling": "code",
             "Teamwork": "users",
             "Probleemoplossing": "lightbulb"
+        }
+    },
+    {
+        "id": 9,
+        "company": "Albert Heijn",
+        "startDate": "jul. 2026",
+        "endDate": "heden",
+        "description": "DevOps Engineer werkstudent bij Albert Heijn (TechNL Labs) op het hoofdkantoor in Zaandam. Ik ondersteun de stagiairs die bij Labs komen, en werk ook zelf verder aan projecten.",
+        "icon": "terminal",
+        "skills": {
+            "Webontwikkeling": "code",
+            "Teamwork": "users",
+            "Ondersteuning": "circle-question"
         }
     }
 ]
