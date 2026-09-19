@@ -3,8 +3,8 @@
         "id": 0,
         "company": "KlusWijs",
         "startDate": "July 2019",
-        "endDate": "Aug. 2019",
-        "description": "Cashier, shelf stocker and customer service employee.",
+        "endDate": "August 2019",
+        "description": "Worked as a cashier, shelf stocker, and customer service assistant.",
         "icon": "hammer",
         "skills": {
             "Customer Focus": "headset",
@@ -15,9 +15,9 @@
     {
         "id": 1,
         "company": "Albert Heijn",
-        "startDate": "Dec. 2020",
-        "endDate": "Oct. 2021",
-        "description": "Shelf stocker and warehouse associate.",
+        "startDate": "December 2020",
+        "endDate": "October 2021",
+        "description": "Worked as a shelf stocker and warehouse associate.",
         "icon": "shop",
         "skills": {
             "Teamwork": "users",
@@ -27,8 +27,8 @@
     {
         "id": 2,
         "company": "Pepperminds",
-        "startDate": "Apr. 2022",
-        "endDate": "Oct. 2022",
+        "startDate": "April 2022",
+        "endDate": "October 2022",
         "description": "Sold subscriptions for various charities and commercial organizations.",
         "icon": "cash-coin",
         "skills": {
@@ -41,9 +41,9 @@
     {
         "id": 3,
         "company": "Megawatt",
-        "startDate": "Jan. 2023",
-        "endDate": "Jun. 2023",
-        "description": "Promoted well-known brands such as Samsung, SkyShowtime and Tombola by interacting with customers and creating interest on the street or at events.",
+        "startDate": "January 2023",
+        "endDate": "June 2023",
+        "description": "Promoted brands including Samsung, SkyShowtime, and Tombola by engaging potential customers on the street and at events.",
         "icon": "star",
         "skills": {
             "Communication": "megaphone",
@@ -55,9 +55,9 @@
     {
         "id": 4,
         "company": "Shuz",
-        "startDate": "Apr. 2023",
-        "endDate": "Aug. 2023",
-        "description": "Assisted customers with finding and purchasing the perfect shoes through professional service while packing and shipping webshop orders.",
+        "startDate": "April 2023",
+        "endDate": "August 2023",
+        "description": "Advised customers on finding and purchasing suitable shoes while also processing online orders.",
         "icon": "shop",
         "skills": {
             "Customer Focus": "headset",
@@ -68,10 +68,10 @@
     },
     {
         "id": 5,
-        "company": "Vermaat at La Place (Duinrell)",
+        "company": "Vermaat",
         "startDate": "July 2023",
-        "endDate": "Aug. 2023",
-        "description": "Worked behind the cash register, prepared food and maintained cleanliness at the La Place in Duinrell.",
+        "endDate": "August 2023",
+        "description": "Worked at La Place in Duinrell, operating the cash register, preparing food, and maintaining a clean workspace.",
         "icon": "egg-fried",
         "skills": {
             "Customer Focus": "headset",
@@ -82,26 +82,27 @@
     {
         "id": 6,
         "company": "ROC Mondriaan",
-        "startDate": "Aug. 2023",
-        "endDate": "Jun. 2024",
-        "description": "As an intern, delivered two web applications and a native iOS/Android app for international partners via the ROC Mondriaan International Office.",
+        "role": "Software Development Intern",
+        "startDate": "August 2023",
+        "endDate": "June 2024",
+        "description": "Shared end-to-end development responsibility with one other intern for two web applications for AEHT and Innotecs and one Flutter app released on iOS and Android. Used Symfony, PHP, Bootstrap, Flutter, Dart, HTML, CSS, and JavaScript. The delivered products remain in active use.",
         "icon": "terminal",
         "skills": {
-            "Web Development": "code",
-            "App Development": "mobile",
-            "Teamwork": "users",
-            "Problem Solving": "lightbulb"
+            "Symfony / PHP": "code",
+            "Flutter / Dart": "mobile",
+            "Project Delivery": "check"
         }
     },
     {
         "id": 7,
         "company": "KPN/XS4ALL",
-        "startDate": "Oct. 2024",
-        "endDate": "Jan. 2026",
-        "description": "Provide reliable technical customer support for XS4ALL and KPN clients from the Amsterdam office, resolving technical and administrative issues professionally.",
+        "role": "Klantexpert Tech (Technical Customer Expert)",
+        "startDate": "October 2024",
+        "endDate": "January 2026",
+        "description": "Progressed from general customer service to certified Klantexpert Tech, specializing in internet and Wi-Fi troubleshooting. Provided clear technical explanations and additional guidance to KPN and XS4ALL customers with complex questions.",
         "icon": "telephone",
         "skills": {
-            "Customer Service": "headset",
+            "Wi-Fi Troubleshooting": "wifi",
             "Technical Support": "gear",
             "Communication": "megaphone",
             "Problem Solving": "lightbulb"
@@ -110,27 +111,31 @@
     {
         "id": 8,
         "company": "Albert Heijn",
-        "startDate": "Feb. 2026",
+        "role": "DevOps Engineer Intern",
+        "startDate": "February 2026",
         "endDate": "July 2026",
-        "description": "DevOps Engineer Intern at Albert Heijn (TechNL Labs) at the headquarters in Zaandam. I develop web applications and prototypes, implement features, and resolve technical issues within a multidisciplinary team.",
+        "description": "Worked in a multidisciplinary Albert Heijn Labs innovation team on confidential projects involving multimodal generative AI. Developed prototypes with Kotlin, Spring Boot, Next.js, Python, and FastAPI; several concepts are progressing toward production release.",
         "icon": "terminal",
         "skills": {
-            "Web Development": "code",
+            "Generative AI": "lightbulb",
+            "Full-stack Development": "code",
             "Teamwork": "users",
-            "Problem Solving": "lightbulb"
+            "Prototyping": "hammer"
         }
     },
     {
         "id": 9,
         "company": "Albert Heijn",
+        "role": "DevOps Engineer (Working Student)",
         "startDate": "July 2026",
-        "endDate": "heden",
-        "description": "Working Student DevOps Engineer at Albert Heijn (TechNL Labs) at the headquarters in Zaandam. I support the interns who join TechNL Labs and also work independently on ongoing projects.",
+        "endDate": "Present",
+        "description": "Contributes to supporting a cohort of 25 interns by advising on their projects and helping with Albert Heijn-specific infrastructure. Also maintains infrastructure and researches emerging technologies using Kotlin, Spring Boot, Next.js, Python, LLM providers, and Azure.",
         "icon": "terminal",
         "skills": {
-            "Web Development": "code",
-            "Teamwork": "users",
-            "Assistance": "circle-question"
+            "Infrastructure": "gear",
+            "Mentoring": "users",
+            "Technology Research": "lightbulb",
+            "Azure": "cloud"
         }
     }
 ]

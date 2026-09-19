@@ -3,8 +3,8 @@
         "id": 0,
         "company": "KlusWijs",
         "startDate": "juli 2019",
-        "endDate": "aug. 2019",
-        "description": "Kassamedewerker, vakkenvuller en klantenservice medewerker.",
+        "endDate": "augustus 2019",
+        "description": "Werkte als kassamedewerker, vakkenvuller en klantenservicemedewerker.",
         "icon": "hammer",
         "skills": {
             "Klantgericht": "headset",
@@ -15,9 +15,9 @@
     {
         "id": 1,
         "company": "Albert Heijn",
-        "startDate": "dec. 2020",
-        "endDate": "okt. 2021",
-        "description": "Vakkenvuller en magazijnmedewerker.",
+        "startDate": "december 2020",
+        "endDate": "oktober 2021",
+        "description": "Werkte als vakkenvuller en magazijnmedewerker.",
         "icon": "shop",
         "skills": {
             "Teamwork": "users",
@@ -27,9 +27,9 @@
     {
         "id": 2,
         "company": "Pepperminds",
-        "startDate": "apr. 2022",
-        "endDate": "okt. 2022",
-        "description": "Voor verschillende goede doelen en commerciële organisaties abonnementen verkocht.",
+        "startDate": "april 2022",
+        "endDate": "oktober 2022",
+        "description": "Verkocht abonnementen voor verschillende goede doelen en commerciële organisaties.",
         "icon": "cash-coin",
         "skills": {
             "Verkoop": "cash-coin",
@@ -41,9 +41,9 @@
     {
         "id": 3,
         "company": "Megawatt",
-        "startDate": "jan. 2023",
+        "startDate": "januari 2023",
         "endDate": "juni 2023",
-        "description": "Promootte bekende merken zoals Samsung, SkyShowtime en Tombola door interactie met klanten te zoeken en ze geïnteresseerd te maken op straat of op evenementen.",
+        "description": "Promootte merken zoals Samsung, SkyShowtime en Tombola door op straat en tijdens evenementen met potentiële klanten in gesprek te gaan.",
         "icon": "star",
         "skills": {
             "Communicatie": "megaphone",
@@ -55,9 +55,9 @@
     {
         "id": 4,
         "company": "Shuz",
-        "startDate": "apr. 2023",
-        "endDate": "aug. 2023",
-        "description": "Klanten helpen met de perfecte schoenen vinden en aanschaffen via goede en professionele klantenservice met aandacht voor de klant. Ook webshop pakketten ingepakt en opgestuurd.",
+        "startDate": "april 2023",
+        "endDate": "augustus 2023",
+        "description": "Adviseerde klanten bij het vinden en aanschaffen van passende schoenen en verwerkte daarnaast webshopbestellingen.",
         "icon": "shop",
         "skills": {
             "Klantgericht": "headset",
@@ -69,8 +69,8 @@
     {
         "id": 5,
         "company": "Vermaat",
-        "startDate": "jul. 2023",
-        "endDate": "aug. 2023",
+        "startDate": "juli 2023",
+        "endDate": "augustus 2023",
         "description": "Bij La Place in Duinrell gewerkt, waar ik onder andere achter de kassa stond, eten bereidde en schoonmaakte.",
         "icon": "egg-fried",
         "skills": {
@@ -82,26 +82,27 @@
     {
         "id": 6,
         "company": "ROC Mondriaan",
-        "startDate": "aug. 2023",
+        "role": "Stagiair Software Development",
+        "startDate": "augustus 2023",
         "endDate": "juni 2024",
-        "description": "Als stagair via International Office van ROC Mondriaan voor twee internationale organisaties een webapp gemaakt, daarnaast ook een native iOS en Android app.",
+        "description": "Nam samen met één andere stagiair de volledige ontwikkeling op zich van twee webapplicaties voor AEHT en Innotecs en één Flutter-app voor iOS en Android. Werkte met Symfony, PHP, Bootstrap, Flutter, Dart, HTML, CSS en JavaScript. De opgeleverde oplossingen worden nog actief gebruikt.",
         "icon": "terminal",
         "skills": {
-            "Webontwikkeling": "code",
-            "App ontwikkeling": "mobile",
-            "Teamwork": "users",
-            "Probleemoplossing": "lightbulb"
+            "Symfony / PHP": "code",
+            "Flutter / Dart": "mobile",
+            "Projectoplevering": "check"
         }
     },
     {
         "id": 7,
         "company": "KPN/XS4ALL",
-        "startDate": "okt. 2024",
-        "endDate": "jan. 2026",
-        "description": "Betrouwbare technische klantenservice aanbieden voor klanten van XS4ALL en KPN op het kantoor in Amsterdam. Klanten ondersteund op professionele wijze met technische en administratieve vraagstukken.",
+        "role": "Klantexpert Tech",
+        "startDate": "oktober 2024",
+        "endDate": "januari 2026",
+        "description": "Groeide door van algemene klantenservice naar gecertificeerd Klantexpert Tech, gespecialiseerd in het oplossen van internet- en wifi-problemen. Bood klanten van KPN en XS4ALL duidelijke technische uitleg en extra begeleiding bij complexe vragen.",
         "icon": "telephone",
         "skills": {
-            "Klantenservice": "headset",
+            "Wifi-probleemoplossing": "wifi",
             "Technische ondersteuning": "gear",
             "Communicatie": "megaphone",
             "Probleemoplossing": "lightbulb"
@@ -110,27 +111,31 @@
     {
         "id": 8,
         "company": "Albert Heijn",
-        "startDate": "feb. 2026",
-        "endDate": "jul. 2026",
-        "description": "DevOps Engineer stagiair bij Albert Heijn (TechNL Labs) op het hoofdkantoor in Zaandam. Ik ontwikkel webapplicaties en prototypes, implementeer features en los technische problemen op binnen een multidisciplinair team.",
+        "role": "Stagiair DevOps Engineer",
+        "startDate": "februari 2026",
+        "endDate": "juli 2026",
+        "description": "Werkte binnen een multidisciplinair innovatieteam van Albert Heijn Labs aan vertrouwelijke projecten met multimodale generatieve AI. Ontwikkelde prototypes met Kotlin, Spring Boot, Next.js, Python en FastAPI; meerdere concepten worden doorontwikkeld richting productierelease.",
         "icon": "terminal",
         "skills": {
-            "Webontwikkeling": "code",
+            "Generatieve AI": "lightbulb",
+            "Full-stackontwikkeling": "code",
             "Teamwork": "users",
-            "Probleemoplossing": "lightbulb"
+            "Prototyping": "hammer"
         }
     },
     {
         "id": 9,
         "company": "Albert Heijn",
-        "startDate": "jul. 2026",
+        "role": "Werkstudent DevOps Engineer",
+        "startDate": "juli 2026",
         "endDate": "heden",
-        "description": "DevOps Engineer werkstudent bij Albert Heijn (TechNL Labs) op het hoofdkantoor in Zaandam. Ik ondersteun de stagiairs die bij Labs komen, en werk ook zelf verder aan projecten.",
+        "description": "Draagt bij aan de begeleiding van een groep van 25 stagiairs door mee te denken over hun projecten en te helpen met Albert Heijn-specifieke infrastructuur. Onderhoudt daarnaast infrastructuur en onderzoekt nieuwe technologieën met Kotlin, Spring Boot, Next.js, Python, LLM-providers en Azure.",
         "icon": "terminal",
         "skills": {
-            "Webontwikkeling": "code",
-            "Teamwork": "users",
-            "Ondersteuning": "circle-question"
+            "Infrastructuur": "gear",
+            "Begeleiding": "users",
+            "Technologieonderzoek": "lightbulb",
+            "Azure": "cloud"
         }
     }
 ]

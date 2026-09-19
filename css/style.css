@@ -67,6 +67,43 @@ body {
   align-items: end;
 }
 
+.cv-download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0.65rem 0 1rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(85, 107, 194, 0.22);
+  transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease;
+}
+
+.cv-download-button:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+  box-shadow: 0 12px 26px rgba(85, 107, 194, 0.3);
+}
+
+.cv-download-button:focus-visible {
+  color: #fff;
+  outline: 3px solid rgba(174, 138, 169, 0.55);
+  outline-offset: 3px;
+  box-shadow: 0 10px 24px rgba(85, 107, 194, 0.28);
+}
+
+.cv-download-button:active {
+  transform: translateY(0);
+}
+
 .lang-toggle {
   width: 44px;
   height: 44px;
@@ -385,8 +422,40 @@ body {
 .academic-img img { max-width: 100%; max-height: 380px; object-fit: contain; border-radius: 8px; }
 
 @media (max-width: 768px) {
+  .about-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-header {
+    align-items: stretch;
+    order: -1;
+  }
+
+  .about-header h1,
+  .about-header h4 {
+    text-align: center;
+  }
+
+  .cv-download-button {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .profile-image {
+    align-self: center;
+  }
+
   .academic-row { display: block; }
   .academic-placeholder { margin-top: 1rem; }
+}
+
+.exp-role {
+  margin: 0.2rem 0 0;
+  color: var(--primary);
+  font-size: 0.86rem;
+  font-weight: 500;
 }
 
 /* Skills Section Styles */
@@ -458,7 +527,7 @@ body {
   line-height: 1.2;
 }
 
-/* Skills List with Progress Bars */
+/* Languages and core competencies */
 .skills-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -468,13 +537,12 @@ body {
 }
 
 .skill-item {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
   transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
   will-change: transform, box-shadow;
-  border-radius: 8px;
-  padding: 6px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  background: var(--card-background);
 }
 
 /* Subtle hover effect for competencies */
@@ -489,51 +557,26 @@ body {
     color: var(--skill-name-hover);
   }
 
-  .skill-item .progress-bar-fill {
-    transition: transform 260ms ease, filter 200ms ease, box-shadow 200ms ease;
-    transform-origin: left center;
-  }
+}
 
-  .skill-item:hover .progress-bar-fill {
-    transform: scaleX(1.02);
-    filter: brightness(1.06);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-  }
+.skill-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .skill-name {
   font-size: 0.95rem;
   font-weight: 500;
   color: var(--text);
-  margin-bottom: 0.25rem;
 }
 
-.progress-bar-container {
-  width: 100%;
-  height: 12px;
-  background: rgba(0, 0, 0, 0.08);
-  border-radius: 6px;
-  overflow: hidden;
-  position: relative;
-}
-
-.progress-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--primary), var(--accent));
-  border-radius: 6px;
-  transition: width 1s ease-out;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Animation for progress bars */
-.skill-item.in-view .progress-bar-fill {
-  animation: fillBar 1s ease-out forwards;
-}
-
-@keyframes fillBar {
-  from {
-    width: 0;
-  }
+.skill-detail {
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {

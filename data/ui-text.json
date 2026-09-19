@@ -1,13 +1,9 @@
 {
     "name": "Maurits Fokkens",
-    "job_title": "Software Ontwikkelaar",
-    "nav_experience": "Ervaring",
-    "nav_education": "Opleiding",
-    "nav_skills": "Vaardigheden",
-    "nav_projects": "Projecten",
-    "nav_about": "Over Mij",
-    "about_text": "Hallo! Ik ben Maurits, een gepassioneerde softwareontwikkelaar met een sterke focus op het creëren van elegante en gebruiksvriendelijke websites en applicaties.\n\nMet meer dan zes jaar ervaring in full-stack development, combineer ik technische kennis met een oog voor design om digitale oplossingen te bouwen die écht opvallen.\n\nIk ben altijd op zoek naar nieuwe uitdagingen en mogelijkheden om te groeien als ontwikkelaar. Programmeren is al van jongs af aan een hobby van mij, waardoor ik van nature nieuwsgierig ben naar nieuwe technologieën en altijd wil blijven leren. Elk project benader ik dan ook met een hoop passie en toewijding!\n\nIn mijn vrije tijd experimenteer ik met technologieën waar ik nog niet mee bekend ben; kennis die ik later weer inzet in toekomstige projecten.\n\nTechnologie verandert snel, en juist dat inspireert me om te blijven ontdekken. Ik wil bijdragen aan innovatieve projecten die niet alleen technisch sterk zijn, maar ook mensen helpen in hun dagelijks leven.",
+    "job_title": "Softwareontwikkelaar",
+    "about_text": "Hallo! Ik ben Maurits, een softwareontwikkelaar met een focus op DevOps en mobiele ontwikkeling. Ik programmeer sinds mijn vijftiende en heb ervaring opgebouwd via persoonlijke projecten, mijn opleiding, stages en professionele functies.\n\nIk combineer softwareontwikkeling graag met infrastructuur, onderzoek nieuwe technologieën en bouw praktische oplossingen die mensen in hun dagelijks leven helpen. Samenwerken, anderen ondersteunen en mezelf technisch blijven ontwikkelen staan daarbij centraal.",
     "projects_title": "Mijn Projecten",
+    "download_cv": "Download cv als pdf",
     "nav": {
         "about": "Over Mij",
         "experience": "Ervaring",

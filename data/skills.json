@@ -16,7 +16,7 @@
                     "icon": "fab fa-bootstrap"
                 },
                 {
-                    "name": "Tailwind",
+                    "name": "Tailwind CSS",
                     "icon": "fab fa-css3-alt"
                 },
                 {
@@ -34,10 +34,6 @@
                 {
                     "name": "Next.js",
                     "icon": "fab fa-react"
-                },
-                {
-                    "name": "Vite",
-                    "icon": "fas fa-bolt"
                 }
             ]
         },
@@ -88,16 +84,16 @@
                 {
                     "name": "Flutter",
                     "icon": "fa-brands fa-flutter"
-                },
-                {
-                    "name": "React Native",
-                    "icon": "fab fa-react"
                 }
             ]
         },
         {
-            "title": "Tools & Databases",
+            "title": "DevOps, Tools & Databases",
             "items": [
+                {
+                    "name": "Vite",
+                    "icon": "fas fa-bolt"
+                },
                 {
                     "name": "Git",
                     "icon": "fab fa-git-alt"
@@ -119,7 +115,7 @@
                     "icon": "fas fa-dharmachakra"
                 },
                 {
-                    "name": "ArgoCD",
+                    "name": "Argo CD",
                     "icon": "fas fa-ship"
                 }
             ]
@@ -128,35 +124,29 @@
     "skills": [
         {
             "name": "Nederlands",
-            "level": 100
+            "detail": "Moedertaal"
         },
         {
             "name": "Engels",
-            "level": 90
+            "detail": "Vloeiend"
         },
         {
-            "name": "Klantcontact",
-            "level": 95
+            "name": "Klantgerichtheid"
         },
         {
-            "name": "Communicatie",
-            "level": 92
+            "name": "Communicatie"
         },
         {
-            "name": "Teamwork",
-            "level": 88
+            "name": "Samenwerking"
         },
         {
-            "name": "Probleemoplossing",
-            "level": 85
+            "name": "Probleemoplossend vermogen"
         },
         {
-            "name": "Webontwikkeling",
-            "level": 82
+            "name": "Webontwikkeling"
         },
         {
-            "name": "Technische ondersteuning",
-            "level": 80
+            "name": "Technische ondersteuning"
         }
     ]
 }

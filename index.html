@@ -99,7 +99,7 @@
     </nav>
 
     <div id="about-me" class="container mt-5">
-        <div class="d-md-flex justify-content-between gap-5">
+        <div class="about-layout d-md-flex justify-content-between gap-5">
             <div>
                 <hr>
                 <p data-ui-text="about_text" class="about-text"></p>
@@ -107,6 +107,11 @@
             <div class="about-header">
                 <h1 class="text-md-end"><span data-ui-text="name"></span> (<span data-age></span>)</h1>
                 <h4 data-ui-text="job_title" class="animation"></h4>
+                <a class="cv-download-button" href="/pdf/maurits-fokkens-cv-nl.pdf"
+                    download="maurits-fokkens-cv-nl.pdf">
+                    <i class="bi bi-download" aria-hidden="true"></i>
+                    <span data-ui-text="download_cv"></span>
+                </a>
                 <img src="img/profile.png" alt="Profile Picture" class="profile-image">
             </div>
         </div>

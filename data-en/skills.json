@@ -16,7 +16,7 @@
                     "icon": "fab fa-bootstrap"
                 },
                 {
-                    "name": "Tailwind",
+                    "name": "Tailwind CSS",
                     "icon": "fab fa-css3-alt"
                 },
                 {
@@ -34,10 +34,6 @@
                 {
                     "name": "Next.js",
                     "icon": "fab fa-react"
-                },
-                {
-                    "name": "Vite",
-                    "icon": "fas fa-bolt"
                 }
             ]
         },
@@ -92,8 +88,12 @@
             ]
         },
         {
-            "title": "Tools & Databases",
+            "title": "DevOps, Tools & Databases",
             "items": [
+                {
+                    "name": "Vite",
+                    "icon": "fas fa-bolt"
+                },
                 {
                     "name": "Git",
                     "icon": "fab fa-git-alt"
@@ -115,7 +115,7 @@
                     "icon": "fas fa-dharmachakra"
                 },
                 {
-                    "name": "ArgoCD",
+                    "name": "Argo CD",
                     "icon": "fas fa-ship"
                 }
             ]
@@ -124,35 +124,29 @@
     "skills": [
         {
             "name": "Dutch",
-            "level": 100
+            "detail": "Native"
         },
         {
             "name": "English",
-            "level": 90
+            "detail": "Fluent"
         },
         {
-            "name": "Customer Service",
-            "level": 95
+            "name": "Customer Focus"
         },
         {
-            "name": "Communication",
-            "level": 92
+            "name": "Communication"
         },
         {
-            "name": "Teamwork",
-            "level": 88
+            "name": "Collaboration"
         },
         {
-            "name": "Problem Solving",
-            "level": 85
+            "name": "Problem Solving"
         },
         {
-            "name": "Web Development",
-            "level": 82
+            "name": "Web Development"
         },
         {
-            "name": "Technical Support",
-            "level": 80
+            "name": "Technical Support"
         }
     ]
 }

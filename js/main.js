@@ -177,6 +177,9 @@ function renderTimeline(items) {
         const iconCls = iconMap[it.icon] || (`bi-${it.icon}`) || 'bi-briefcase';
         const item = document.createElement('article');
         item.className = 'timeline-item';
+        const roleHtml = it.role
+            ? `<p class="exp-role">${escapeHtml(it.role)}</p>`
+            : '';
 
         // build skill tags HTML (readable pills instead of icon-only buttons)
         let skillsHtml = '';
@@ -193,7 +196,10 @@ function renderTimeline(items) {
             <div class="timeline-marker" aria-hidden="true"><i class="bi ${iconCls}" aria-hidden="true"></i></div>
             <div class="card-body">
                 <div class="exp-header">
-                    <h3 class="exp-company">${escapeHtml(it.company)}</h3>
+                    <div>
+                        <h3 class="exp-company">${escapeHtml(it.company)}</h3>
+                        ${roleHtml}
+                    </div>
                     <span class="exp-dates">${escapeHtml(it.startDate || '')} — ${escapeHtml(it.endDate || '')}</span>
                 </div>
                 <p class="exp-description">${escapeHtml(it.description || '')}</p>
@@ -322,31 +328,23 @@ function renderSkills(data) {
         });
     }
 
-    // Render skills (progress bars)
+    // Render languages and core competencies without subjective percentages
     const skillsContainer = document.getElementById('skills-list');
     if (skillsContainer && data.skills) {
         skillsContainer.innerHTML = '';
         data.skills.forEach(skill => {
             const skillItem = document.createElement('div');
             skillItem.className = 'skill-item';
+            const detail = skill.detail
+                ? `<span class="skill-detail">${escapeHtml(skill.detail)}</span>`
+                : '';
             skillItem.innerHTML = `
-                <div class="skill-name">${escapeHtml(skill.name)}</div>
-                <div class="progress-bar-container" role="progressbar" aria-label="${escapeHtml(skill.name)}" aria-valuenow="${skill.level}" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar-fill" style="width: ${skill.level}%"></div>
+                <div class="skill-summary">
+                    <span class="skill-name">${escapeHtml(skill.name)}</span>
+                    ${detail}
                 </div>
             `;
             skillsContainer.appendChild(skillItem);
         });
-
-        // Add intersection observer for progress bar animation
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) {
-                    e.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('.skill-item').forEach(el => obs.observe(el));
     }
 }
